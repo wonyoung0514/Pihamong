@@ -883,13 +883,13 @@ section.ov {
 }
 
 /* ===== 실제 섹션 (콘텐츠 정렬용) ===== */
-.notification-sec {
+/* .notification-sec {
   background: transparent;
   padding: 120px 0 0;
   text-align: center;
   color: #222;
   font-family: "Pretendard", sans-serif;
-}
+} */
 
 
 /* ===== 내부 컨테이너 ===== */
