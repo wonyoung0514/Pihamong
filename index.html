@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pihamonn</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div class="wrap">
+            <header id="header">
+
+                <ul id="main_menu">
+                    <figure class="main-logo" aria-label="메인로고 이미지">
+                        <img src="img/logo 1.png" alt="Logo">
+                    </figure>
+                    <div class="menu-links">
+                        <li>
+                            <a href="#home" id="li1">Home</a>
+                        </li>
+                        <li>
+                            <a href="#video" id="li2">Video</a>
+                        </li>
+                        <li>
+                            <a href="#app" id="li3">App</a>
+                        </li>
+                    </div>
+                </ul>
+
+            </header>
+
+            <section id="main">
+                <div class="container">
+                    <section class="main-mockup-section">
+                        <figure class="main-mockup" aria-label="앱 화면 목업">
+                            <img src="img/Mask group.png" alt="목업이미지">
+                        </figure>
+                    </section>
+                </section>
+            </div>
+        </section>
+
+        <section id="video" class="video-section">
+            <div class="video-container">
+
+                <figure class="video-frame" aria-label="앱 소개 영상">
+                    <video
+                        id="appvi"
+                        src="./img/app.mp4"
+                        controls="controls"
+                        playsinline="playsinline"></video>
+                </figure>
+            </div>
+        </section>
+
+        <section id="Overview" class="ov">
+            <div class="ov__inner">
+                <div class="ov__text">
+                    <p class="ov__eyebrow">Overview</p>
+                    <h2 class="ov__title">피할 수 없다면?<br>
+                        <span class="highlight">미리 대비하지몽~!</span></h2>
+                    <article class="ov__box">
+                        저희는 불운을 운세와 데이터로 예측 가능하게<br>
+                        만들어 두려움 대신 여유를 선물합니다.
+                    </article>
+                </div>
+
+                <figure class="ov__side">
+                    <img src="img/자산 1기본 3.png" alt="캐릭터">
+                </figure>
+            </div>
+        </section>
+
+        <section id="background" class="bg-sec">
+            <div class="bg-inner">
+                <p class="sv-eyebrow">Background</p>
+
+                <!-- 메인 문장 -->
+                <h2 class="hero-title">왜 행운만 얘기 하는데...<br>
+                    <span class="highlight">불운</span>도 생명이잖아요</h2>
+
+                <!-- 서브 텍스트 -->
+                <p class="bg-caption">우리는 늘 행운에만 집중하지만, 현실은 불운과 항상 함께하고 있습니다.<br>
+                    그래서 저희는 생각해냈습니다. 불운을 가볍게 웃으며 피할 수 있는 앱을 말이죠.</p>
+
+                <figure class="illust">
+                    <img src="img/Background 호버전이미지.png" alt="일러스트 기본" class="base-img">
+                    <img src="img/Background 호버이미지.png" alt="일러스트 호버" class="hover-img">
+                </figure>
+            </div>
+        </section>
+
+        <!-- Survey Section -->
+        <section id="survey" class="sv-sec">
+            <div class="sv-inner">
+                <p class="sv-eyebrow">Survey</p>
+                <h2 class="sv-title">사람들은
+                    <span class="highlight">불운</span>을<br>
+                    어떻게 받아들일까요?</h2>
+                <p class="sv-caption">
+                    우리는 이 물음에 답을 찾기 위해, 다양한 연령대의<br>90명을 대상으로 설문조사를 진행하였습니다.
+                </p>
+                <figure class="sv__period">
+                    <img src="img/설문조사응답기간.png" alt="설문조사응답기간">
+                </figure>
+            </div>
+        </section>
+
+        <section class="survey-section">
+            <div class="inner">
+                <p class="question">운세를 보시는 가장 큰 이유는 무엇인가요?</p>
+
+                <svg
+                    class="survey-chart"
+                    width="700"
+                    height="230"
+                    viewbox="0 0 700 230"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <!-- 1위: 보라색 막대 -->
+                    <g class="bar-group">
+                        <rect class="bar purple" x="0" y="0" width="520" height="50" rx="25" ry="25"></rect>
+                        <text class="label" x="30" y="25">재미, 호기심</text>
+                        <text class="percent" x="650" y="25">87%</text>
+                    </g>
+
+                    <!-- 2위: 회색 막대 -->
+                    <g class="bar-group" transform="translate(0,70)">
+                        <rect class="bar gray" x="0" y="0" width="400" height="50" rx="25" ry="25"></rect>
+                        <text class="label" x="30" y="25">미래 대비</text>
+                    </g>
+
+                    <!-- 3위: 진회색 막대 -->
+                    <g class="bar-group" transform="translate(0,140)">
+                        <rect class="bar darkgray" x="0" y="0" width="400" height="50" rx="25" ry="25"></rect>
+                        <text class="label" x="30" y="25">대화 소재</text>
+                    </g>
+
+                </svg>
+            </div>
+        </section>
+
+        <section class="attitude-section">
+            <div class="inner">
+                <p class="attitude-question">
+                    불운(좋지 않은 예측)을 들었을 때<br>보통 어떤 태도를 보이시나요?
+                </p>
+
+                <div class="attitude-card-group">
+                    <div class="att-card purple">
+                        <p class="title">조금 신경씀</p>
+                        <p class="percent">48%</p>
+                    </div>
+
+                    <div class="att-card gray">
+                        <p class="title">가볍게 넘김</p>
+                        <p class="percent">44%</p>
+                    </div>
+
+                    <div class="att-card darkgray">
+                        <p class="title">적극적으로 대비</p>
+                        <p class="percent">6%</p>
+                    </div>
+
+                    <div class="att-card darker">
+                        <p class="title">불쾌</p>
+                        <p class="percent">5%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insight -->
+        <section id="Insight" class="is-sec">
+            <div class="is-inner">
+                <p class="is-eyebrow">Insight</p>
+                <h2 class="is-title">불운, 생각보다
+                    <span class="highlight">가볍다!</span><br></h2>
+                <p class="is-caption">
+                    저희는 사람들이 불운 콘텐츠를 가볍게 웃고<br>넘기는 것을 알 수 있었습니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Service goal -->
+        <section id="service-goal" class="sg-sec">
+            <div class="sv-inner">
+                <p class="sv-eyebrow">Service goal</p>
+                <h2 class="sv-title">귀하게 자란 내가,<br>
+                    <span class="highlight">불운</span>을 당해도 될까?</h2>
+                <p class="sv-caption">
+                    여러분의 미래에 다칠 크고 작은 불운을<br>가볍고 재미있게 대비할 수 있도록 돕습니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="keyword-showcase">
+            <div class="keyword-inner">
+
+                <!-- 1행 -->
+                <div class="keyword-row left">
+                    <div class="keyword-text left purple">
+                        LUCKY
+                        <span class="white">FUNNY</span>
+                    </div>
+                </div>
+
+                <!-- 2행 -->
+                <div class="keyword-row right">
+                    <div class="keyword-text right">SIMPLE WITTY CHARACTER</div>
+                </div>
+
+                <!-- 3행 -->
+                <div class="keyword-row left">
+                    <div class="keyword-text left">
+                        CUTIE
+                        <span class="purple">CHARACTER</span>
+                    </div>
+                </div>
+
+                <!-- 4행 -->
+                <div class="keyword-row right">
+                    <div class="keyword-text right">PLAYFUL SIMPLE</div>
+                </div>
+
+                <!-- 오버레이 데코 이미지 -->
+                <img src="/img/별데코.png" alt="별 데코" class="deco star">
+                <img src="/img/부루니데코.png" alt="부루니 데코" class="deco monster">
+
+            </div>
+        </section>
+
+        <div class="notification-wrapper">
+            <div class="notification-bg">
+                <section class="notification-sec">
+                    <div class="inner">
+                        <div class="text-box">
+                            <h4 class="label">Notification</h4>
+                            <h2 class="title">언제쯤 불운이 오려나?</h2>
+                            <p class="desc">
+                                원하는 시간에 오늘의 불운 요약과,<br>
+                                상황 맞춤 알림을 받아보세요.
+                            </p>
+                        </div>
+                        <div class="mockup-wrap">
+                            <img src="/img/notification목업.png" alt="알림 화면 목업" class="mockup">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+<section class="fortune-intro">
+  <div class="inner">
+    <p class="intro-label">Home</p>
+    <h2 class="intro-title">
+      오늘의 불운을 알고<br>
+      햄삐한 하루를 보내자!
+    </h2>
+
+    <!-- 반원 배경 + 메인 이미지 -->
+    <div class="intro-visual">
+      <div class="half-circle"></div>
+      <img src="img/오늘의 불운 섹션 메인 이미지.png" alt="오늘의 불운 섹션 메인 이미지" class="intro-img">
+    </div>
+  </div>
+</section>
+
+<!-- 오늘의 불운 아이템 섹션 -->
+<section class="unlucky-items">
+  <div class="inner">
+    <div class="item-guide">
+      <img src="img/오늘의 불운 아이템 가이드 이미지.png" alt="오늘의 불운 아이템 가이드 이미지" class="item-img">
+    </div>
+  </div>
+</section>
+
+<!-- 하단 가이드 섹션 -->
+<section class="unlucky-guides">
+  <div class="inner">
+    <div class="guide-grid">
+      <!-- 왼쪽 가이드 -->
+      <div class="guide-box left">
+        <img src="img/사고 위험 가이드 이미지.png" alt="사고 위험 가이드 이미지" class="guide-img">
+      </div>
+
+      <!-- 오른쪽 가이드 -->
+      <div class="guide-box right">
+        <img src="img/불운 상담 가이드 이미지.png" alt="불운 상담 가이드 이미지" class="guide-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+        <!-- DAILY 섹션 -->
+        <section class="luck-sec luck-sec--daily">
+            <div class="luck-inner">
+                <!-- 상단 텍스트 -->
+                <div class="luck-head">
+                    <span class="luck-eyebrow">Bad luck report</span>
+                    <h2 class="luck-title">
+                        불운떠니앱<br>
+                        오늘의 운세는 어떠냥?
+                    </h2>
+                    <p class="luck-desc">
+                        오늘의 불운과 한달 불운 상세페이지에서,
+                        <br>
+                        캐릭터에게 불운을 퇴치할 수 있는 팁과 부적을 얻어보세요!
+                    </p>
+                </div>
+
+                <!-- Daily 그룹 -->
+                <div class="luck-group-daily">
+                    <div class="luck-row-daily">
+                        <img src="img/데일리 목업.png" alt="데일리 목업" class="mockup-img mockup-daily">
+                        <img src="img/부루니 목업.png" alt="부루니 목업" class="mockup-img">
+                        <img src="img/도우니 목업.png" alt="도우니 목업" class="mockup-img">
+                        <img src="img/부적획득 목업.png" alt="부적획득 목업" class="mockup-img mockup-right">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MONTHLY 섹션 -->
+        <section class="luck-sec luck-sec--monthly">
+            <div class="luck-inner">
+                <!-- Monthly 그룹 -->
+                <div class="luck-group-monthly">
+                    <div class="luck-row-monthly">
+                        <img src="img/한달 불운 1.png" alt="한달 불운 1" class="mockup-img mockup-monthly">
+                        <img src="img/한달 불운 2.png" alt="한달 불운 2" class="mockup-img mockup-monthly">
+                        <img src="img/한달 불운 3.png" alt="한달 불운 3" class="mockup-img mockup-monthly">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ai-interaction">
+            <div class="inner">
+                <!-- 상단 텍스트 -->
+                <div class="text-box">
+                    <h4 class="label">AI Interaction</h4>
+                    <h2 class="title">갈테야테야...<br>요괴한테 상담받으러 갈테야</h2>
+                    <p class="desc">
+                        불길한 일이 있었다면, 부루니와 도우니에게 말해보세요.<br>
+                        부루니는 찬스스럽게, 도우니는 따뜻하게 함께하여 당신의<br>
+                        불운을 해석하고, 앞날 복제를 전해드립니다.
+                    </p>
+                </div>
+
+                <!-- 이미지 그리드 -->
+                <div class="image-grid">
+                    <div class="img-wrap main">
+                        <img src="/img/메인인터페이스.png" alt="메인 인터페이스" class="grid-img">
+                        <img src="/img/Funny데코.png" alt="Funny 데코" class="deco funny">
+                    </div>
+                    <img src="/img/채팅인터페이스1.png" alt="채팅 화면 1" class="grid-img">
+                    <img src="/img/채팅인터페이스2.png" alt="채팅 화면 2" class="grid-img">
+                    <div class="img-wrap bottom">
+                        <img src="/img/도우니인터페이스.png" alt="요괴 캐릭터 화면" class="grid-img">
+                        <img src="/img/Sweet데코.png" alt="Sweet 데코" class="deco sweet">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="unlucky-section">
+            <div class="inner">
+
+                <!-- 왼쪽: 휴대폰 목업 가이드 -->
+                <div class="unlucky-left">
+                    <div class="phone-guide">
+                        <img src="img/지도_목업.png" alt="휴대폰 목업" class="phone-img">
+                    </div>
+                </div>
+
+                <!-- 오른쪽: 텍스트 + 이미지 카드 -->
+                <div class="unlucky-right">
+                    <div class="text-box">
+                        <h4 class="subtitle">Unlucky area</h4>
+                        <h2 class="title">내 근처 불운지역은 어디?</h2>
+                        <p class="desc">
+                            실제 뉴스와 사건 데이터를 기반으로,<br>
+                            현재 위치를 중심으로 지역별 위험 지수와 그 이유를 제공합니다.
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <img src="img/지도 팝업.png" alt="계원대사거리 정보 카드" class="info-img">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Amulet Section -->
+        <section class="amulet-section">
+            <div class="amulet-header">
+                <h3 class="amulet-subtitle">Amulet</h3>
+                <h2 class="amulet-title">받은 부적을 모아모아</h2>
+                <p class="amulet-description">도우나에게 받은 부적들을 쉽고 빠르게 확인할 수 있어요.</p>
+            </div>
+
+            <ul class="amulet-filter">
+                <li class="active">전체</li>
+                <li>연애</li>
+                <li>학업</li>
+                <li>금전</li>
+                <li>건강</li>
+                <li>사업</li>
+            </ul>
+
+            <div class="amulet-cards">
+                <div class="amulet-card"><img class="amulet-img" src="img/막차 성공 부적.png" alt="막차 성공 부적"></div>
+                <div class="amulet-card"><img class="amulet-img" src="img/부자될게 부적.png" alt="부자될께 부적"></div>
+                <div class="amulet-card"><img class="amulet-img" src="img/찍신 강림 부적.png" alt="찍신 강림 부적"></div>
+                <div class="amulet-card"><img class="amulet-img" src="img/최종 합격 부적.png" alt="최종 합격 부적"></div>
+                <div class="amulet-card"><img class="amulet-img" src="img/만능 부적.png" alt="만능 부적"></div>
+                <div class="amulet-card"><img class="amulet-img" src="img/내꺼 하자 부적.png" alt="내꺼 하자 부적"></div>
+            </div>
+        </section>
+
+        <div class="bg-top"></div>
+
+        <div class="bg-wrapper">
+            <!-- Brand Identity -->
+            <section id="brand-identity" class="bi-sec">
+                <div class="bi-inner">
+                    <div class="sv-inner">
+                        <h2 class="sv-title">Brand Identity<br></h2>
+
+                        <p class="bi-copy">
+                            피하몽은 보라색과 영롱한 자개색을 바탕으로<br>
+                            피하몽의 사용자에게 신비로운 느낌을 전달해줍니다.
+                        </p>
+                    </div>
+
+                    <ul class="bi-grid">
+                        <li class="bi-card">
+                            <figure class="bi-figure">
+                                <img src="img/신비한.png" alt="브랜드 아이콘 1">
+                            </figure>
+                        </li>
+                        <li class="bi-card">
+                            <figure class="bi-figure">
+                                <img src="img/전통적인.png" alt="브랜드 아이콘 2">
+                            </figure>
+                        </li>
+                        <li class="bi-card">
+                            <figure class="bi-figure">
+                                <img src="img/밝은.png" alt="브랜드 아이콘 3">
+                            </figure>
+                        </li>
+                        <li class="bi-card">
+                            <figure class="bi-figure">
+                                <img src="img/어두운.png" alt="브랜드 아이콘 4">
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Logo -->
+            <section id="logo" class="logo-sec">
+                <div class="rail">
+                    <div class="sv-inner">
+                        <h2 class="sv-title">Logo<br></h2>
+
+                        <p class="logo-copy">
+                            ‘몽’을 상진하는 M의 모습을 지그재그 형태처럼 디자인하여<br>
+                            불운을 피해 나아가는 여정을 시각적으로 표현하였습니다.
+                        </p>
+
+                        <div class="logo-grid">
+                            <!-- 왼쪽(세로로 2칸) 큰 카드 -->
+                            <figure class="card tall">
+                                <img src="img/휴대폰 목업.png" alt="피하몽 로고가 적용된 핸드폰 목업">
+                            </figure>
+
+                            <!-- 오른쪽 위 카드 -->
+                            <figure class="card wide">
+                                <img src="img/로고 화면 1.png" alt="피하몽 심볼 일러스트 1">
+                            </figure>
+
+                            <!-- 오른쪽 아래 카드 -->
+                            <figure class="card wide">
+                                <img src="img/로고 화면 2.png" alt="피하몽 심볼 일러스트 2">
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+                <section class="char-sec">
+                    <div class="char-inner">
+
+                        <!-- 섹션 헤더 -->
+                        <div class="char-head">
+                            <!-- <h3 class="char-eyebrow">Character</h3> -->
+                            <div class="sv-inner">
+                                <h2 class="sv-title">Character<br></h2>
+
+                                <p class="bi-copy">
+                                    구미호의 모습을 본뜨고 신비로운 자개의 빛깔을 살려, 불운을 알려주는<br>부루니와 부적을 제공하는 도우니를 제작하였습니다.
+                                </p>
+                            </div>
+
+                            <!-- ===== 부루니 섹션 ===== -->
+                            <div class="char-block">
+                                <!-- 왼쪽: 메인 캐릭터 -->
+                                <div class="char-col left">
+                                    <div class="char-card overlay">
+                                        <img src="img/B웃음_부루니기본.png" alt="부루니 메인 캐릭터">
+                                    </div>
+                                    <div class="char-card sub">
+                                        <img src="img/화난_부루니기본.png" alt="부루니 작은 캐릭터">
+                                        <img src="img/자산 1부루니로고 1.png" alt="부루니 작은 캐릭터">
+                                    </div>
+                                </div>
+
+                                <!-- 오른쪽: 텍스트 + 하단 이미지 -->
+                                <div class="char-col right">
+                                    <div class="char-text">
+                                        <h4>부루니</h4>
+                                        <p>
+                                            이것 실화냥? 운이 왜 이렇게 안 좋냐냥?<br>
+                                            그렇다면, 내가 네 주변에 있을지도 모른다냥.<br>
+                                            <span class="highlight">...불운은 아무도 모르게 찾아온다냥.</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="char-card image">
+                                        <img src="img/캐릭터_부루니.png" alt="부루니 하단 캐릭터 이미지">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ===== 도우니 섹션 ===== -->
+                    <section class="char-sec douni">
+                        <div class="char-inner">
+
+                            <div class="char-block-douni">
+
+                                <!-- 1행: 텍스트 + 메인 도우니 겹침 -->
+                                <div class="char-row top">
+                                    <div class="char-card douni-text">
+                                        <h4>도우니</h4>
+                                        <p>
+                                            부에..어딜 이거 가져가라몽.<br>
+                                            이 부적이면 네 하루가 더 나아질거라몽!<br>
+                                            <span class="highlight">...네가 겪는 불운은 곧 사라질 거다몽!</span>
+                                        </p>
+                                    </div>
+                                    <div class="char-card douni-main">
+                                        <img src="img/내름낼름기본 2.png" alt="도우니 내름낼름"/>
+                                    </div>
+                                </div>
+
+                                <!-- 2행: 작은 도우니 -->
+                                <div class="char-row bottom">
+                                    <div class="char-card douni-sub">
+                                        <img src="img/도우니 기본형 1.png" alt="도우니 기본형"/>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="video2" class="video-section2">
+                        <div class="video-container2">
+                            <figure class="video-frame2" aria-label="앱 소개 영상2">
+                                <video
+                                    id="appvi"
+                                    src="./img/app2.mp4"
+                                    controls="controls"
+                                    playsinline="playsinline"></video>
+                            </figure>
+                        </div>
+                    </section>
+
+                </div>
+            </section>
+
+            <section class="app-preview">
+                <div class="preview-frame">
+                    <img src="img/피아몽목업들.png" alt="피아몽목업들" class="preview-img">
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="site-footer">
+            <!-- 팀원 -->
+            <div class="footer-col">
+                <div class="footer-inner">
+                    <h2>Project Crew</h2>
+                    <ul>
+                        <li>Project manager<br>김솔휘<br>
+                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
+                        </li>
+                        <li>Project manager<br>김영찬<br>
+                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
+                        </li>
+                        <li>Designer<br>강재연<br>
+                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
+                        </li>
+                        <li>Designer<br>권단우<br>
+                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
+                        </li>
+                        <li>Designer<br>김정아<br>
+                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
+                        </li>
+                        <li>Programmer<br>이원영<br>
+                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
