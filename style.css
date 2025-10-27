@@ -874,7 +874,7 @@ section.ov {
 
 
 .notification-bg {
-  background: url("/img/notification배경.png") center/cover no-repeat;
+  background: url("img/notification배경.png") center/cover no-repeat;
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
   overflow: hidden; /* 라운드 안쪽만 표시 */
