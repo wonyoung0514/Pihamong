@@ -559,7 +559,7 @@ section.ov {
     display: inline-block;
     font-size: clamp(28px,4.8vw,56px);
     line-height: 1.05;
-    font-weight: 800;
+    font-weight: 500;
     color: #FFFFFF;
 }
 
@@ -657,7 +657,7 @@ section.ov {
 
 /* ===== Layout ===== */
 .survey-section {
-  background-color: #151518;
+  background-color: #151515;
   color: #fff;
   padding: 100px 0;
   font-family: "Pretendard", "Noto Sans KR", sans-serif;
@@ -696,7 +696,7 @@ section.ov {
   animation-delay: 0s;
 }
 
-/* ✅ 보라색만 올라온 후 길어지는 애니메이션 추가 */
+/* 보라색만 올라온 후 길어지는 애니메이션 추가 */
 .bar.purple {
   fill: #b247ff;
   animation: rise 0.8s ease-out forwards, expand 0.7s ease-out 0.8s forwards;
@@ -717,7 +717,7 @@ section.ov {
   font-weight: 500;
   pointer-events: none;
   dominant-baseline: middle; /* 수직 중앙 정렬 */
-  text-anchor: start; /* 왼쪽 기준 (start), 가운데는 middle */
+  text-anchor: start;
 }
 
 .percent {
@@ -753,10 +753,12 @@ section.ov {
   0% {
     transform: translateY(30px);
     opacity: 0;
+    visibility: hidden;
   }
   100% {
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -943,7 +945,7 @@ section.ov {
   height: auto;
   transform: translateY(100px);
   opacity: 0;
-  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease;
+  transition: transform 2s cubic-bezier(0.12, 1, 0.36, 1), opacity 2s ease;
 }
 
 /* show 클래스가 추가될 때 애니메이션 실행 */
@@ -972,7 +974,7 @@ section.ov {
 
 /* ===== Fortune Intro Section ===== */
 .fortune-intro {
-  /* background-color: #f7f3fc; */
+  background: linear-gradient(180deg, #F6F3FA 0%, #F1E6FF 100%);
   padding: 120px 0;
   text-align: center;
   position: relative;
@@ -1121,11 +1123,21 @@ section.ov {
 
 
 /* ===== 전체 섹션 ===== */
+
+.Badluck-report{
+  background-image: url("img/Bad\ luck\ report\ 배경꾸밈선.png");
+  object-fit: cover;
+}
+
 .luck-sec {
-  background: #f5f3fb;
+  /* background: linear-gradient(to bottom, #F6F3FA 0%, #F1E6FF 100%); */
+  /* background-image: url("img/Bad\ luck\ report\ 배경.png"); */
+  /* object-fit: cover; */
   color: #1a1a1a;
   overflow: hidden;
 }
+
+
 
 /* ===== 내부 컨테이너 ===== */
 .luck-inner {
@@ -1140,17 +1152,17 @@ section.ov {
 
 /* 💜 DAILY 전용 luck-inner */
 .luck-sec--daily .luck-inner {
-  padding: 120px 0 0;  /* 상단 여백 작게, 하단 넉넉히 */
+  padding: 120px 0 0;  
 }
 
 /* 💙 MONTHLY 전용 luck-inner */
 .luck-sec--monthly .luck-inner {
-  padding: 100px 0 400px; /* 상단 넓게, 하단 적당히 */
+  padding: 100px 0 400px; 
 }
 
 /* ===== 상단 텍스트 ===== */
 .luck-head {
-  width: auto; /* 다시 원래의 컨테이너 폭에 맞춤 */
+  width: auto;
   position: static;
   left: auto;
   right: auto;
@@ -1182,7 +1194,7 @@ section.ov {
 
 /* ===== 그룹 간 간격 ===== */
 .luck-group-daily {
-  margin-bottom: 140px; /* Daily와 Monthly 간 간격 */
+  margin-bottom: 140px;
 }
 
 /* ===== DAILY 섹션 ===== */
@@ -1200,6 +1212,7 @@ section.ov {
   right: 50%; */
   margin-left: -50vw;
   margin-right: -50vw;
+  margin-bottom: 140px; /* Daily와 Monthly 간 간격 */
 }
 
 .luck-row-daily {
@@ -1207,16 +1220,13 @@ section.ov {
   justify-content: space-between; /* 각 mockup을 좌우 끝으로 분배 */
   align-items: flex-end;
   gap: 30px;
-  width: 100%; /* 중요!! 고정폭 해제하고 부모에 맞게 확장 */
+  width: 100%;
 }
 
 .luck-row-daily .mockup-right {
-  margin-left: 0; /* 이제 auto 제거 */
+  margin-left: 0; 
 }
 
-.luck-group-daily {
-  margin-bottom: 140px; /* Daily와 Monthly 간 간격 */
-}
 
 /* ===== MONTHLY 섹션 ===== */
 .luck-group-monthly {
@@ -1234,6 +1244,7 @@ section.ov {
   justify-content: flex-end;
   align-items: flex-end;
   gap: 30px;
+  overflow: visible;
 }
 
 
@@ -1249,24 +1260,59 @@ section.ov {
 .mockup-monthly {
   width: 360px; /* 각 mockup 고정 폭 */
   height: auto;
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  will-change: transform, opacity;
+  visibility: hidden;
+  
+}
+
+.mockup-monthly.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* .luck-row-daily img:first-child {
   height: 700px;
 } */
 
+
+
+/* 순차적으로 등장시키기 위한 지연 (delay) */
+.mockup-daily:nth-child(1) { transition-delay: 0.1s; }
+.mockup-daily:nth-child(2) { transition-delay: 0.3s; }
+.mockup-daily:nth-child(3) { transition-delay: 0.5s; }
+.mockup-daily:nth-child(4) { transition-delay: 0.7s; }
+
+
+mockup-monthly:nth-child(1) { transition-delay: 0.5s; }
+mockup-monthly:nth-child(2) { transition-delay: 0.3s; }
+mockup-monthly:nth-child(3) { transition-delay: 0.1s; }
+
 /* MONTHLY 계단 효과 */
+/* 초기 상태: 각자 아래로 조금 더 내려감 (애니메이션 전 offset) */
 .luck-row-monthly .mockup-monthly:nth-child(1) {
+  transform: translateY(190px); /* 원래 위치 + 40px */
+}
+.luck-row-monthly .mockup-monthly:nth-child(2) {
+  transform: translateY(100px);
+}
+.luck-row-monthly .mockup-monthly:nth-child(3) {
+  transform: translateY(-10px);
+}
+
+/* show 시 원래 계단 위치로 복귀 */
+.luck-row-monthly .mockup-monthly.show:nth-child(1) {
   transform: translateY(150px);
 }
-
-.luck-row-monthly .mockup-monthly:nth-child(2) {
+.luck-row-monthly .mockup-monthly.show:nth-child(2) {
   transform: translateY(60px);
 }
-
-.luck-row-monthly .mockup-monthly:nth-child(3) {
+.luck-row-monthly .mockup-monthly.show:nth-child(3) {
   transform: translateY(-50px);
 }
+
+
 
 /* ===== 그룹 라벨 ===== */
 .luck-label {
@@ -1280,6 +1326,41 @@ section.ov {
   margin-bottom: 32px;
   text-transform: capitalize;
 }
+
+
+/*  === daily: 왼족 → 오른쪽 ===  */
+/* 기본 상태 아래에 숨겨져 있음 */
+.mockup-daily {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* show 클래스가 붙었을 때 */
+.mockup-daily.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Monthly: 오른쪽 → 왼쪽 === */
+.mockup-monthly {
+  opacity: 0;
+  transform: translateY(40px); /* animation offset */
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  will-change: transform, opacity;
+  visibility: hidden;
+}
+
+.mockup-monthly.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+
+
+
+
 
 /* 반응형 (모바일 시 중앙 정렬) */
 @media (max-width: 1024px) {
@@ -1303,7 +1384,7 @@ section.ov {
 /* ===== 내부 컨테이너 ===== */
 /* ===== 섹션 전체 ===== */
 .ai-interaction {
-  background: linear-gradient(to bottom, #F2E8FE 0%, #D3BBFF 100%);
+  background: linear-gradient(to bottom, #F2E8FE 0%, #C3A4FD 100%);
   color: var(--txt);
   padding: 100px 0 140px; /* 섹션 상하 여백 */
   font-family: "Pretendard", sans-serif;
@@ -1374,13 +1455,13 @@ section.ov {
 }
 
 .ai-interaction .image-grid .img-wrap.bottom {
-  transform: translateY(-150px); /* 원하는 만큼 위로 조정 */
+  transform: translateY(-150px);
 }
 
 /* ===== 데코 이미지 ===== */
 .ai-interaction .deco {
   position: absolute;
-  width: 140px;
+  width: 200px;
   opacity: 0.9;
   pointer-events: none;
 }
@@ -1475,20 +1556,23 @@ section.ov {
 /* ===== Card Grid (3 columns, 2 rows) ===== */
 .amulet-section .amulet-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 30px;
   justify-items: center;
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 900px;
+  overflow: visible;
 }
 
 /* ===== Card Wrapper ===== */
 .amulet-section .amulet-card {
-  width: 130px;
-  height: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  aspect-ratio: 3 / 5; /* 비율 유지 */
+  width: 100%;
+  max-width: 240px; 
+  /* border-radius: 12px; */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1497,12 +1581,21 @@ section.ov {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 12px;
+  display: block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.amulet-section .amulet-card:hover {
+  transform: scale(1.05); /* 카드 전체 확대 */
+  z-index: 3;             /* 위로 떠오르게 */
+}
+
 .amulet-section .amulet-card:hover .amulet-img {
-  transform: scale(1.05);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
 /* ===== Responsive (mobile: 2 columns) ===== */
@@ -1739,16 +1832,19 @@ margin: 0;
 
 /* 카드 */
 .bi-card {
+  position: relative;
   margin: 0;
+  overflow: visible;
+  cursor: pointer;
 }
 
 /* 이미지 박스 */
 .bi-figure {
   position: relative;
   width: 318.96px;
-  height: 372.83px; /* 실제 비율 */
+  height: 372.83px;
   border-radius: 20px;
-  overflow: hidden;
+  overflow: visible;  /* 호버했을때 카드이미지가 잘리지 않도록 */
   margin: 0;
 }
 
@@ -1758,7 +1854,33 @@ margin: 0;
   object-fit: cover;
   object-position: center top;
   display: block;
-  filter: drop-shadow(0 10px 20px rgba(var(--card-glow), 0.28));
+  /* filter: drop-shadow(0 10px 20px rgba(var(--card-glow), 0.28)); */
+  transition: transform 0.6s ease;
+}
+
+/* 호버효과 */
+.bi-card:hover .bi-figure img {
+  transform: translateY(30%);
+}
+
+
+
+/* hover 시 아래 이미지 표시 — 각 카드별 */
+.bi1 {
+  background-image: url("img/신비한호버.png");
+  background-size: cover;
+}
+.bi2 {
+  background-image: url("img/전통적인호버.png");
+  background-size: cover;
+}
+.bi3 {
+  background-image: url("img/밝은호버.png");
+  background-size: cover;
+}
+.bi4 {
+  background-image: url("img/어두운호버.png");
+  background-size: cover;
 }
 
 /* 반응형 */
@@ -1943,8 +2065,8 @@ margin: 0;
 
 /* 카드 기본 스타일 */
 .char-card {
-  border-radius: 32px;
-  background: #1d1d25;
+  border-radius: 60px;
+  /* background: #683CC9; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1953,8 +2075,8 @@ margin: 0;
 
 /* 텍스트 카드 */
 .char-text {
-  border-radius: 32px;
-  background: #1d1d25;
+  border-radius: 60px;
+  background: #683CC9;
   padding: 48px;
   color: #fff;
 }
@@ -1968,12 +2090,12 @@ margin: 0;
 
 .char-text p {
   font-size: 0.95rem;
-  color: #C7C8D2;
+  color: #E3DDFF;
   line-height: 1.8;
 }
 
 .char-text .highlight {
-  color: #b28aff;
+  color: #FFFFFF;
 }
 
 /* ===== 개별 이미지 설정 ===== */
@@ -1981,7 +2103,10 @@ margin: 0;
 /* ✅ 1. 메인 부루니 (좌상단) */
 
 .char-card.overlay{
-  background: #5c4cc3;
+  background-image: url("img/부루니캐릭터배경패턴.png");
+  background-size: 101% auto;
+  background-position: center 18%;
+  /* background: #5c4cc3; */
   width: 100%;     /* 카드 내부 비율 유지 */
   height: 500px;
   object-fit: contain;
@@ -2005,7 +2130,7 @@ margin: 0;
   justify-content: center;
   align-items: flex-end;
   gap: 32px;
-  background: #1d1d25;
+  background: #683CC9;
 }
 
 .char-card.sub img {
@@ -2019,7 +2144,7 @@ margin: 0;
 
 /* ✅ 3. 하단 보라색 부루니 (우하단) */
 .char-card.image {
-  background: #5c4cc3;
+  background: #301A61;
   width: 100%;     /* 카드 내부 비율 유지 */
   height: 635px;
   object-fit: contain;
@@ -2093,9 +2218,10 @@ section.char-sec.douni .char-card.douni-text {
   justify-content: flex-start;  /* 세로 상단 정렬 */
   align-items: flex-start;      /* 왼쪽 정렬 */
   text-align: left;
-
-  background: #1b1b22;
-  border-radius: 32px;
+  background-image: url("img/도우니캐릭터배경패턴.png");
+  /* background: #1b1b22; */
+  background-size: 101% auto;
+  /* border-radius: 60px; */
   padding: 56px;
   width: 1250px;
   position: relative;
@@ -2113,13 +2239,17 @@ section.char-sec.douni .char-card.douni-text h4 {
 
 section.char-sec.douni .char-card.douni-text p {
   font-size: 1rem;
-  color: #d5d4e2;
+  color: #FFFFFF;
   line-height: 1.8;
   margin: 0;
 }
 
-section.char-sec.douni .char-card.douni-text .highlight {
+section.char-sec.douni  {
   color: #b28aff;
+}
+
+.char-card.douni-text .highlight{
+  color: #6535CE;
 }
 
 section.char-sec.douni .douni-main img {
@@ -2159,7 +2289,7 @@ section.char-sec.douni .douni-main img {
 }
 
 .char-sec.douni .douni-sub {
-  /* background: #1b1b22; */
+  background: #683CC9;
   border-radius: 32px;
   width: 660px;
   height: 360px;
