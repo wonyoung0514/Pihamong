@@ -231,7 +231,7 @@ section.ov {
   gap: 20px;
 }
 
-/* Overview (섹션 라벨) */
+/* Overview */
 .ov__eyebrow {
   font-size: 1rem;
   font-weight: 600;
@@ -464,7 +464,7 @@ section.ov {
 /* ===== Card Base ===== */
 .att-card {
   width: 160px;
-  height: 180px;
+  height: 130px;
   border-radius: 20px;
   text-align: center;
   padding: 30px 10px;
@@ -473,11 +473,29 @@ section.ov {
   transition: all 0.8s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
+
+
 /* 등장 후 상태 */
-.att-card.visible {
+.att-card.purple.visible {
   opacity: 1;
-  transform: translateX(0) rotate(0deg);
+  transform: translateX(0) rotate(-4deg);
 }
+
+.att-card.gray.visible {
+  opacity: 1;
+  transform: translateX(0) rotate(4deg);
+}
+
+.att-card.darkgray.visible {
+  opacity: 1;
+  transform: translateX(0) rotate(-4deg);
+}
+
+.att-card.darker.visible {
+  opacity: 1;
+  transform: translateX(0) rotate(4deg);
+}
+
 
 /* ===== 색상 스타일 ===== */
 .att-card.purple {
@@ -499,6 +517,15 @@ section.ov {
   background: #2f2e34;
   color: #ffffff;
 }
+
+
+/* 카드가 보일 때, 왼쪽부터 순차 지연 */
+.attitude-card-group .att-card:nth-child(1).visible { transition-delay: 0s; }
+.attitude-card-group .att-card:nth-child(2).visible { transition-delay: 0.12s; }
+.attitude-card-group .att-card:nth-child(3).visible { transition-delay: 0.24s; }
+.attitude-card-group .att-card:nth-child(4).visible { transition-delay: 0.36s; }
+
+
 
 /* ===== Texts ===== */
 .att-card .title {
@@ -531,7 +558,9 @@ section.ov {
 /* Survey */
 /* 섹션 배경/여백 */
 .sv-sec {
-    background: #151518;
+    background-image: url("img/Survey배경.png");
+    object-fit: cover;
+    /* background: #151518; */
     color: #fff;
     padding: 56px 5vw 72px;
     scroll-margin-top: 80px;
@@ -1130,9 +1159,6 @@ section.ov {
 }
 
 .luck-sec {
-  /* background: linear-gradient(to bottom, #F6F3FA 0%, #F1E6FF 100%); */
-  /* background-image: url("img/Bad\ luck\ report\ 배경.png"); */
-  /* object-fit: cover; */
   color: #1a1a1a;
   overflow: hidden;
 }
