@@ -153,41 +153,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 불운띠니얌 오늘의 운세는 어떠냥?
 document.addEventListener("DOMContentLoaded", () => {
-  function observeMockupGroup(groupSelector, itemSelector) {
+  function observeMockupGroup(groupSelector, itemSelector, reverse = false, delayStep = 180) {
     const group = document.querySelector(groupSelector);
     const items = document.querySelectorAll(itemSelector);
-
-    if (group === null || items.length === 0) {
-      return;
-    }
+    if (!group || items.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting === true) {
-            items.forEach((img, index) => {
-              // 브라우저가 초기 스타일 렌더링을 끝낸 뒤 다음 프레임에서 실행
+          const targetItems = reverse ? Array.from(items).reverse() : items;
+
+          if (entry.isIntersecting) {
+            targetItems.forEach((img, index) => {
               setTimeout(() => {
-                requestAnimationFrame(() => {
-                  img.classList.add("show");
-                });
-              }, index * 180);
+                img.style.visibility = "visible"; // 먼저 보이게
+                requestAnimationFrame(() => img.classList.add("show"));
+              }, index * delayStep);
             });
           } else {
-            items.forEach((img) => {
-              img.classList.remove("show");
+            targetItems.forEach((img, index) => {
+              setTimeout(() => {
+                img.classList.remove("show");
+                // opacity transition 후 visibility hidden 적용 (0.8s 후)
+                setTimeout(() => {
+                  if (!img.classList.contains("show")) {
+                    img.style.visibility = "hidden";
+                  }
+                }, 800); // CSS transition-duration과 동일
+              }, index * delayStep);
             });
           }
         });
       },
       { threshold: 0.3 }
     );
-
     observer.observe(group);
   }
 
-  observeMockupGroup(".luck-group-daily", ".mockup-daily");
-  observeMockupGroup(".luck-group-monthly", ".mockup-monthly");
+  // Daily
+  observeMockupGroup(".luck-group-daily", ".mockup-daily", false, 200);
+  // Monthly (수정된 대상)
+  observeMockupGroup(".luck-group-monthly", ".mockup-monthly", true, 180);
 });
+
+
 
 
