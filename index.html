@@ -44,13 +44,14 @@
 
         <section id="video" class="video-section">
             <div class="video-container">
-
                 <figure class="video-frame" aria-label="앱 소개 영상">
-                    <video
-                        id="appvi"
-                        src="./video/1&2_정아.mp4"
-                        controls="controls"
-                        playsinline="playsinline"></video>
+                    <iframe
+                        id="appVideo"
+                        src="https://www.youtube.com/embed/i0tDO-O0DZE?si=mSjCSRkVFpFHpQKG"
+                        title="앱 소개 영상"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen="allowfullscreen"></iframe>
                 </figure>
             </div>
         </section>
@@ -122,31 +123,47 @@
 
         <section class="survey-section">
             <div class="inner">
-                <p class="question">운세를 보시는 가장 큰 이유는 무엇인가요?</p>
-
+                <p class="question">
+                    <img src="img/Q.png" alt="Q" class="q-icon">
+                    운세를 보시는 가장 큰 이유는 무엇인가요?
+                </p>
                 <svg
                     class="survey-chart"
                     width="700"
                     height="230"
                     viewbox="0 0 700 230"
                     xmlns="http://www.w3.org/2000/svg">
-                    <!-- 1위: 보라색 막대 -->
                     <g class="bar-group">
-                        <rect class="bar purple" x="0" y="0" width="520" height="50" rx="25" ry="25"></rect>
-                        <text class="label" x="30" y="25">재미, 호기심</text>
-                        <text class="percent" x="650" y="25">87%</text>
+                        <!-- 보라색 막대 -->
+                        <rect class="bar purple" x="0" y="0" width="685" height="110" rx="55" ry="55"></rect>
+
+                        <!-- 레이블 -->
+                        <text class="label" x="52" y="55">재미, 호기심</text>
+
+                        <!-- 회색 막대 (보라색 오른쪽에 위치) -->
+                        <rect
+                            class="bar gray-box"
+                            x="1040"
+                            y="5"
+                            width="120"
+                            height="90"
+                            rx="45"
+                            ry="45"></rect>
+
+                        <!-- 퍼센트 텍스트 -->
+                        <text class="percent" x="1100" y="55">87%</text>
                     </g>
 
                     <!-- 2위: 회색 막대 -->
-                    <g class="bar-group" transform="translate(0,70)">
-                        <rect class="bar gray" x="0" y="0" width="400" height="50" rx="25" ry="25"></rect>
-                        <text class="label" x="30" y="25">미래 대비</text>
+                    <g class="bar-group" transform="translate(0,130)">
+                        <rect class="bar gray" x="0" y="0" width="685" height="110" rx="55" ry="55"></rect>
+                        <text class="label" x="52" y="55">미래 대비</text>
                     </g>
 
                     <!-- 3위: 진회색 막대 -->
-                    <g class="bar-group" transform="translate(0,140)">
-                        <rect class="bar darkgray" x="0" y="0" width="400" height="50" rx="25" ry="25"></rect>
-                        <text class="label" x="30" y="25">대화 소재</text>
+                    <g class="bar-group" transform="translate(0,260)">
+                        <rect class="bar darkgray" x="0" y="0" width="685" height="110" rx="55" ry="55"></rect>
+                        <text class="label" x="52" y="55">대화 소재</text>
                     </g>
 
                 </svg>
@@ -156,6 +173,7 @@
         <section class="attitude-section">
             <div class="inner">
                 <p class="attitude-question">
+                    <img src="img/Q.png" alt="Q" class="q-icon">
                     불운(좋지 않은 예측)을 들었을 때<br>보통 어떤 태도를 보이시나요?
                 </p>
 
@@ -185,8 +203,16 @@
 
         <!-- Insight -->
         <section id="Insight" class="is-sec">
+  <div class="cloud-wrap">
+    <div class="left-cloud"></div>
+    <div class="right-cloud"></div>
+  </div>
+            
             <div class="is-inner">
-                <p class="is-eyebrow">Insight</p>
+                <p class="is-eyebrow">
+                    Insight
+                    <img src="img/Star26.png" alt="star" class="star26">
+                </p>
                 <h2 class="is-title">불운, 생각보다
                     <span class="highlight">가볍다!</span><br></h2>
                 <p class="is-caption">
@@ -198,7 +224,9 @@
         <!-- Service goal -->
         <section id="service-goal" class="sg-sec">
             <div class="sv-inner">
-                <p class="sv-eyebrow">Service goal</p>
+                <p class="sv-eyebrow">Service goal
+                    <img src="img/Star26.png" alt="star" class="star26">
+                </p>
                 <h2 class="sv-title">귀하게 자란 내가,<br>
                     <span class="highlight">불운</span>을 당해도 될까?</h2>
                 <p class="sv-caption">
@@ -392,21 +420,20 @@
                 </div>
 
                 <!-- 오른쪽: 텍스트 + 이미지 카드 -->
-<div class="unlucky-right">
-  <div class="unlucky-text">
-    <h4 class="unlucky-subtitle">Unlucky area</h4>
-    <h2 class="unlucky-title">내 근처 불운지역은 어디?</h2>
-    <p class="unlucky-desc">
-      실제 뉴스와 사건 데이터를 기반으로,<br>
-      현재 위치를 중심으로 지역별 위험 지수와 그 이유를 제공합니다.
-    </p>
-  </div>
+                <div class="unlucky-right">
+                    <div class="unlucky-text">
+                        <h4 class="unlucky-subtitle">Unlucky area</h4>
+                        <h2 class="unlucky-title">내 근처 불운지역은 어디?</h2>
+                        <p class="unlucky-desc">
+                            실제 뉴스와 사건 데이터를 기반으로,<br>
+                            현재 위치를 중심으로 지역별 위험 지수와 그 이유를 제공합니다.
+                        </p>
+                    </div>
 
-  <div class="unlucky-card">
-    <img src="img/지도 팝업.png" alt="계원대사거리 정보 카드" class="unlucky-img">
-  </div>
-</div>
-
+                    <div class="unlucky-card">
+                        <img src="img/지도 팝업.png" alt="계원대사거리 정보 카드" class="unlucky-img">
+                    </div>
+                </div>
 
             </div>
         </section>
@@ -438,7 +465,11 @@
             <!-- Brand Identity -->
             <section id="brand-identity" class="bi-sec">
                 <div class="bi-inner">
-                    <h2 class="sv-title">Brand Identity<br></h2>
+                    <h2 class="bi-title">
+                        <img src="img/왼쪽 꽃.png" alt="left-flower" class="flower">
+                        Brand Identity
+                        <img src="img/오른쪽 꽃.png" alt="right-flower" class="flower">
+                    </h2>
 
                     <p class="bi-copy">
                         피하몽은 보라색과 영롱한 자개색을 바탕으로<br>
@@ -473,7 +504,7 @@
             <section id="logo" class="logo-sec">
                 <div class="rail">
                     <div class="sv-inner">
-                        <h2 class="sv-title">Logo<br></h2>
+                        <h2 class="logo-title">Logo<br></h2>
 
                         <p class="logo-copy">
                             ‘몽’을 상진하는 M의 모습을 지그재그 형태처럼 디자인하여<br>
@@ -504,10 +535,10 @@
                         <!-- 섹션 헤더 -->
                         <div class="char-head">
                             <!-- <h3 class="char-eyebrow">Character</h3> -->
-                            <div class="sv-inner">
-                                <h2 class="sv-title">Character<br></h2>
+                            <div class="char-inner">
+                                <h2 class="char-title">Character<br></h2>
 
-                                <p class="bi-copy">
+                                <p class="char-copy">
                                     구미호의 모습을 본뜨고 신비로운 자개의 빛깔을 살려, 불운을 알려주는<br>부루니와 부적을 제공하는 도우니를 제작하였습니다.
                                 </p>
                             </div>
@@ -577,78 +608,78 @@
                         </div>
                     </section>
 
-                    <section id="video2" class="video-section2">
-                        <div class="video-container2">
-                            <figure class="video-frame2" aria-label="앱 소개 영상2">
-                                <video
-                                    id="appvi"
-                                    src="./video/재연_부적,엔딩.mp4"
-                                    controls="controls"
-                                    playsinline="playsinline"></video>
+                    <section id="video" class="video-section">
+                        <div class="video-container">
+                            <figure class="video-frame" aria-label="앱 소개 영상">
+                                <iframe
+                                    id="appVideo"
+                                    src="https://www.youtube.com/embed/nVdFMXn9L1w?si=7fF-06J4zJneB3Yf"
+                                    title="앱 소개 영상"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen="allowfullscreen"></iframe>
                             </figure>
                         </div>
                     </section>
+                </section>
 
-                </div>
-            </section>
+                <section class="app-preview">
+                    <div class="preview-frame">
+                        <img src="img/피아몽목업들.png" alt="피아몽목업들" class="preview-img">
+                    </div>
+                </section>
 
-            <section class="app-preview">
-                <div class="preview-frame">
-                    <img src="img/피아몽목업들.png" alt="피아몽목업들" class="preview-img">
+            </div>
+
+            <footer class="site-footer">
+                <div class="footer-container">
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <img src="img/피하몽과로고.png" alt="피하몽과로고">
+                        </div>
+                        <p>불운 없는 일상의 시작.</p>
+                    </div>
+
+                    <div class="footer-right">
+                        <div class="footer-group">
+                            <h3>planner</h3>
+                            <p>김솔휘 | Solwhi Kim
+                                <a href="#">↗</a>
+                            </p>
+                            <p>김영찬 | Yeongchan Kim
+                                <a href="#">↗</a>
+                            </p>
+                        </div>
+
+                        <div class="footer-group">
+                            <h3>Designer</h3>
+                            <p>강재연 | Jaeyeon Kang
+                                <a href="#">↗</a>
+                            </p>
+                            <p>권단우 | Danwoo Kwon
+                                <a href="#">↗</a>
+                            </p>
+                            <p>김정아 | Junga Kim
+                                <a href="#">↗</a>
+                            </p>
+                        </div>
+
+                        <div class="footer-group">
+                            <h3>Programmer</h3>
+                            <p>이원영 | Wonyoung Yi
+                                <a href="#">↗</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </section>
+
+                <div class="footer-bottom">
+                    <p>Copyright © 2025 혼문.</p>
+                    <p>Thank you for watching!</p>
+                </div>
+            </footer>
 
         </div>
-
-        <footer class="site-footer">
-            <div class="footer-container">
-                <div class="footer-left">
-                    <div class="footer-logo">
-                        <img src="img/피하몽과로고.png" alt="피하몽과로고">
-                    </div>
-                    <p>불운 없는 일상의 시작.</p>
-                </div>
-
-                <div class="footer-right">
-                    <div class="footer-group">
-                        <h3>planner</h3>
-                        <p>김솔휘 | Solwhi Kim
-                            <a href="#">↗</a>
-                        </p>
-                        <p>김영찬 | Yeongchan Kim
-                            <a href="#">↗</a>
-                        </p>
-                    </div>
-
-                    <div class="footer-group">
-                        <h3>Designer</h3>
-                        <p>강재연 | Jaeyeon Kang
-                            <a href="#">↗</a>
-                        </p>
-                        <p>권단우 | Danwoo Kwon
-                            <a href="#">↗</a>
-                        </p>
-                        <p>김정아 | Junga Kim
-                            <a href="#">↗</a>
-                        </p>
-                    </div>
-
-                    <div class="footer-group">
-                        <h3>Programmer</h3>
-                        <p>이원영 | Wonyoung Yi
-                            <a href="#">↗</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>Copyright © 2025 혼문.</p>
-                <p>Thank you for watching!</p>
-            </div>
-        </footer>
-
-    </div>
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>

@@ -206,53 +206,58 @@ html {
 }
 
 /* ===== Video Section (전체 영역 중앙 정렬) ===== */
-/* ===== 공용 비디오 섹션 ===== */
+/* ===== 비디오 섹션 (화면 전체 확장) ===== */
 .video-section,
 .video-section2 {
+  width: 100vw;                 /* 브라우저 전체 폭 */
+  min-height: 100vh;            /* 화면 전체 높이 */
+  background-color: #151518;
+  padding: 0;                   
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #151518;
-  padding: 48px 4vw 72px;
   overflow: hidden;
   position: relative;
 }
 
-/* ===== 공용 비디오 컨테이너 ===== */
+
+/* ===== 비디오 컨테이너 (크기 확장) ===== */
 .video-container,
 .video-container2 {
+  width: 100%;                  
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1361px;
-  /* max-width: 1200px; */
-  margin: 0 auto;
+  position: relative;
+  max-width: none;              
+  margin: 200px 0 200px;
 }
 
-/* ===== 공용 영상 프레임 ===== */
+/* ===== 비디오 프레임 (16:9 비율 유지) ===== */
 .video-frame,
 .video-frame2 {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 16 / 9;
+  width: 78vw;                  /* 뷰포트 기준 폭 */
+  height: calc(78vw * 9 / 16);  /* 자동 비율 계산 */
   overflow: hidden;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* ===== 공용 실제 비디오 요소 ===== */
-.video-frame video,
-.video-frame2 video {
-  width: 100%;
-  /* height: 100%; */
-  object-fit: cover;  /* 프레임을 꽉 채움 */
-  display: block;
   border: none;
 }
+
+/* ===== 유튜브 iframe (플레이어 자체 확장) ===== */
+.video-frame iframe,
+.video-frame2 iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  display: block;
+}
+
 
 /* ===== 공용 스크롤 마진 ===== */
 #video,
@@ -292,30 +297,32 @@ section.ov {
 
 /* Overview */
 .ov__eyebrow {
-  font-size: 1rem;
+  font-size: 24px;
   font-weight: 600;
-  color: #b8b2ca;
+  color: #BCBACE;
+  padding-bottom: 70px;
   margin: 0;
   letter-spacing: 0.05em;
 }
 
 /* 제목 */
 .ov__title {
-  font-size: clamp(32px, 3vw, 48px);
+  font-size: 64px;
   font-weight: 800;
   line-height: 1.3;
   color: #fff;
+  padding-bottom: 30px;
   margin: 0;
 }
 
 .ov__title .highlight {
-  color: #b28aff;
+  color: #A247FF;
 }
 
 /* 설명문 */
 .ov__box {
-  font-size: 1rem;
-  color: #c8c8d0;
+  font-size: 26px;
+  color: #C3C3D2;
   line-height: 1.8;
   max-width: 600px;
 }
@@ -327,12 +334,10 @@ section.ov {
 }
 
 .ov__side img {
-  width: 100%;
+  width: 160%;
   height: auto;
   object-fit: contain;
-  transform: scale(1.15);
   transform-origin: right bottom;
-  filter: drop-shadow(0 0 30px rgba(178, 138, 255, 0.25));
 }
 
 /* 반응형 */
@@ -477,13 +482,18 @@ section.ov {
 }
 
 /* 서브 문장 */
-.sv-sec .sv-inner,
-.is-sec .is-inner{
+.sv-sec .sv-inner
+{
   max-width: 1100px;       /* 필요 시 가이드 폭 */
   margin: 0 auto;
   text-align: center;
   padding: 56px 5vw 72px;  /* 임의 여백 */
 }
+
+
+
+
+
 
 /* 응답 기간 카드 */
 .sv__period{
@@ -535,15 +545,20 @@ section.ov {
 .attitude-question {
   color: #C3C3D2;
   font-size: 32px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   line-height: 1.6;
-  text-align: center;
+
+    display: flex;             /* 이미지와 텍스트를 가로로 배치 */
+  align-items: flex-start;       /* 위쪽 정렬 */
+  gap: 32px;                 /* 이미지와 텍스트 간격 */
 }
+
+
 
 /* ===== Card Container ===== */
 .attitude-card-group {
   display: flex;
-  gap: 20px;
+  /* gap: 20px; */
   justify-content: center;
   align-items: flex-end;
 }
@@ -558,12 +573,13 @@ section.ov {
   opacity: 0;
   transform: translateX(-60px) rotate(-3deg);
   transition: all 0.8s cubic-bezier(0.33, 1, 0.68, 1);
-    display: flex;     
-    flex-direction: column;      /* 세로로 정렬 */
+  display: flex;     
+  flex-direction: column;      /* 세로로 정렬 */
   justify-content: center;     /* 세로 가운데 */
   align-items: center;         /* 가로 가운데 */
   text-align: center; 
   box-sizing: border-box;         /* 텍스트 중앙 정렬 */
+  box-shadow: 2px 8px 24px 2px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -655,12 +671,15 @@ section.ov {
     width: 100vw;
     height: 1080px;
     background-image: url("img/Survey배경.png");
+    background-size: cover;
+    background-position: center;
     object-fit: cover;
     /* background: #151518; */
     color: #fff;
     /* padding: 56px 5vw 72px; */
     scroll-margin-top: 80px;
     /* 고정 헤더 보정 */
+    overflow: hidden;
 }
 #survey .sv-inner {
     padding-top: 130px;
@@ -676,7 +695,7 @@ section.ov {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100%; /* 또는 적절한 값 */
+  /* height: 100%;  */
 }
 
 /* 타이틀 영역 */
@@ -686,6 +705,7 @@ section.ov {
     color: #BCBACE;
     font-size: 24px;
     text-align: center;
+    align-items: center;
 }
 .is-title {
   display: block;
@@ -700,6 +720,14 @@ section.ov {
 }
 
 
+.star26 {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  position: relative;
+  top: 4px;
+}
+
 .sv-title{
    display: block;
     margin: 0 auto 40px;
@@ -712,13 +740,7 @@ section.ov {
     color: #FFFFFF;
 }
 
-  .is-sec {
-    background: #151518;
-    color: #fff;
-    padding: 56px 5vw 72px;
-    scroll-margin-top: 80px;
-    /* 고정 헤더 보정 */
-  }
+
 
 /* 섹션 배경*/
 .sg-sec {
@@ -798,6 +820,92 @@ section.ov {
 
 
 
+/* Insight */
+
+.is-sec {
+  /* background-image: url("img/합친\ 구름.png"); */
+  position: relative;
+  width: auto;
+  height: 1080px;
+  background: #151518;
+  /* color: #fff; */
+  /* background: transparent; */
+  padding: 56px 5vw 72px;
+  scroll-margin-top: 80px;
+    /* 고정 헤더 보정 */
+
+  display: flex;              
+  justify-content: center;    /* 가로 중앙 정렬 */
+  align-items: center; 
+  overflow: hidden;
+}
+
+.is-inner{
+  max-width: 1100px;       /* 필요 시 가이드 폭 */
+  margin: 0 auto;
+  text-align: center;
+  padding: 56px 5vw 72px;  /* 임의 여백 */
+}
+
+
+
+/* 구름 레이어 감싸는 컨테이너 */
+#Insight .cloud-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 공통 구름 스타일 */
+#Insight .left-cloud,
+#Insight .right-cloud {
+  position: absolute;
+  top: 0;
+  width: 1467.9px; /* 원하는 구름 폭 */
+  height: 400px; /* 원하는 구름 높이 */
+  background-size: contain; /* 이미지 비율 유지 */
+  /* background-size: cover; */
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  /* background-color: rgba(255, 0, 0, 0.2); */
+}
+
+/* 구름 이미지 지정 */
+#Insight .left-cloud {
+  left: -50px;
+  top: 500px;
+  background-image: url("img/왼쪽\ 구름.png"); /* 왼쪽 구름 이미지 */
+}
+
+#Insight .right-cloud {
+  right: -50px;
+  top: 500px;
+  background-image: url("img/오른쪽\ 구름.png"); /* 오른쪽 구름 이미지 */
+}
+
+/* 텍스트영역 */
+#Insight .is-inner {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  color: #fff;
+  opacity: 0;            /* 처음엔 투명 */
+  filter: blur(6px);     /* 처음엔 약간 흐림 */
+  transition: opacity 1.2s ease-out, filter 1.2s ease-out; /* 부드럽게 */
+}
+
+/* 보이기 시작할 때 활성화될 클래스 */
+#Insight .is-inner.visible {
+  opacity: 1;
+  filter: blur(0);
+}
+
 
 
 
@@ -805,26 +913,46 @@ section.ov {
 
 /* ===== Layout ===== */
 .survey-section {
+  width: 100vw;
+  height: 980px;
   background-color: #151515;
   color: #fff;
   padding: 100px 0;
+
+  display: flex;              /* 플렉스 컨테이너로 설정 */
+  align-items: center;        /* 수직 중앙 정렬 */
+  justify-content: center;    /* 수평 중앙 정렬 */
+
+
   font-family: "Pretendard", "Noto Sans KR", sans-serif;
 }
 
 .survey-section .inner {
   width: calc(661px + 40px + 660.14px);
+  height: auto;
   margin: 0 auto;
   box-sizing: border-box;
-  text-align: center;
+  /* text-align: center; */
 }
 
 /* ===== Question Text ===== */
 .question {
+  display: flex;             /* 이미지와 텍스트를 가로로 배치 */
+  align-items: center;       /* 수직 중앙 정렬 */
+  gap: 32px;                 /* 이미지와 텍스트 간격 */
   color: #bcbcc6;
   font-size: 32px;
-  margin-bottom: 30px;
+  margin-bottom: 120px;
+  line-height: 1.4;
 }
 
+/* ===== Q 아이콘 ===== */
+.q-icon {
+  width: 61px;               /* 아이콘 크기 */
+  height: 61px;
+  object-fit: contain;       /* 이미지 비율 유지 */
+  flex-shrink: 0;            /* 텍스트 길이에 따라 줄어들지 않게 */
+}
 /* ===== SVG Base ===== */
 .survey-chart {
   overflow: visible;
@@ -835,14 +963,10 @@ section.ov {
   transform: translateY(60px);
   opacity: 0;
   animation: rise 0.8s ease-out forwards;
+  transform-box: fill-box;     /* SVG 자체 박스를 기준으로 transform 적용 */
+  transform-origin: center; 
 }
 
-/* 모든 막대 동시에 올라옴 */
-.bar.purple,
-.bar.gray,
-.bar.darkgray {
-  animation-delay: 0s;
-}
 
 /* 보라색만 올라온 후 길어지는 애니메이션 추가 */
 .bar.purple {
@@ -860,7 +984,7 @@ section.ov {
 
 /* ===== Text Styles ===== */
 .label {
-  font-size: 16px;
+  font-size: 40px;
   fill: #fff;
   font-weight: 500;
   pointer-events: none;
@@ -868,15 +992,22 @@ section.ov {
   text-anchor: start;
 }
 
-.percent {
-  font-size: 14px;
-  fill: #ccc;
-  font-weight: 500;
-  dominant-baseline: middle;
-  text-anchor: end;
+
+.bar.gray-box {
+  fill: #3c3a46;
+  animation: rise 0.8s ease-out forwards;
 }
 
-/* ===== 애니메이션 정의 ===== */
+.percent {
+  font-size: 32px;
+  fill: #cccccc;
+  font-weight: 600;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+
+/* ===== 애니메이션 ===== */
 @keyframes rise {
   0% {
     transform: translateY(60px);
@@ -888,14 +1019,17 @@ section.ov {
   }
 }
 
+
+
 @keyframes expand {
   0% {
-    width: 400px;
+    width: 685px;
   }
   100% {
-    width: 600px;
+    width: 920px;
   }
 }
+
 
 @keyframes riseText {
   0% {
@@ -939,7 +1073,7 @@ section.ov {
 /* 텍스트 */
 .keyword-text {
   /* font-size: clamp(2rem, 6vw, 5rem); */
-  font-size: 150px;
+  font-size: 200px;
   font-weight: 700;
   opacity: 0;
   transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
@@ -951,6 +1085,11 @@ section.ov {
 .keyword-text.left {
   text-align: left;
   transform: translateX(-50px);
+}
+
+.keyword-text.left.show {
+  opacity: 1;
+  transform: translateX(-30px);
 }
 
 .keyword-text.right {
@@ -987,7 +1126,7 @@ section.ov {
   }
   100% {
     opacity: 1;
-    transform: translateX(300px);
+    transform: translateX(130px);
   }
 }
 
@@ -1027,15 +1166,15 @@ section.ov {
 
 /* 각 이미지 위치 (텍스트 위 오버레이) */
 .deco.star {
-  top: 18%;
-  left: 45%;
-  width: 70px;
+  top: 11%;
+  left: 23%;
+  width: 200px;
 }
 
 .deco.monster {
-  top: 65%;
-  left: 58%;
-  width: 90px;
+  top: 60%;
+  left: 70%;
+  width: 254px;
 }
 
 
@@ -1662,7 +1801,7 @@ section.ov {
   background-color: #281D38;
   color: white;
   text-align: center;
-  padding: 80px 20px;
+  padding: 200px 20px 80px;
   font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
 }
 
@@ -1676,13 +1815,13 @@ section.ov {
 .amulet-section .amulet-title {
   font-size: 48px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin: 60px 0 10px;
 }
 
 .amulet-section .amulet-description {
   font-size: 24px;
   color: #C3C3D2;
-  margin-bottom: 40px;
+  margin-bottom: 120px;
 }
 
 /* ===== Filter Buttons ===== */
@@ -1714,19 +1853,24 @@ section.ov {
 /* ===== Card Grid (3 columns, 2 rows) ===== */
 .amulet-section .amulet-cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(180px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 283.6px);
+    row-gap: 42px;      
+  column-gap: 25px; 
   justify-items: center;
+  justify-content: center;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1200px;
   overflow: visible;
 }
 
 /* ===== Card Wrapper ===== */
 .amulet-section .amulet-card {
-  aspect-ratio: 3 / 5; /* 비율 유지 */
-  width: 100%;
-  max-width: 240px; 
+  /* aspect-ratio: 3 / 5;  */
+  aspect-ratio: auto;
+  width: 283.6px;
+  height: 435.53px;
+  max-width: none; 
+  height: auto;
   /* border-radius: 12px; */
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1736,7 +1880,7 @@ section.ov {
 
 /* ===== Image (Scoped Class) ===== */
 .amulet-section .amulet-card .amulet-img {
-  width: 100%;
+  width: 283.6px;
   height: 100%;
   object-fit: contain;
   display: block;
@@ -1879,11 +2023,10 @@ section.ov {
 
 .unlucky-img {
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
   height: auto;
-  border-radius: 16px;
   object-fit: cover;
-  margin-left: -200px;
+  margin-left: -160px;
 }
 
 
@@ -1974,6 +2117,13 @@ section.ov {
   align-items: flex-start;
 }
 
+.flower{
+    position: relative;
+  top: 80px;
+  width: 178px;
+}
+
+
 /* 상단 헤더 (좌: 제목 / 우: 설명) */
 .bi-head {
   display: grid;
@@ -1991,17 +2141,30 @@ margin: 0;
     letter-spacing: 0.03em;
 }
 
+.bi-title{
+   display: block;
+    margin: 0 auto 40px;
+    padding: 46px 0 0;
+    text-align: center;
+    font-size: 64px;
+    line-height: 1.05;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
 .bi-copy {
   margin: 0 auto 120px;
   /* margin-bottom: 50px; */
   color: var(--txt-dim);
   line-height: 1.7;
+  font-size: 32px;
   text-align: center;
 }
 
 .logo-copy {
+  font-size: 26px;
   margin: 0;
-  margin-bottom: 50px;
+  margin-bottom: 120px;
   color: var(--txt-dim);
   line-height: 1.7;
   text-align: center;
@@ -2125,6 +2288,17 @@ margin: 0;
   align-items: start;
 }
 
+.logo-title{
+   display: block;
+    margin: 0 auto 37px;
+    padding: 46px 0 0;
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
 .logo-head .eyebrow {
     margin: 0;
     font-weight: 800;
@@ -2220,13 +2394,27 @@ margin: 0;
   margin-bottom: 0px;
 }
 
-.char-eyebrow {
-  margin: 0;
-  font-weight: 800;
-  font-size: clamp(18px, 2vw, 24px);
-  color: #b8b2ca;
-  letter-spacing: 0.03em;
+.char-title{
+   display: block;
+    margin: 0 auto 37px;
+    padding: 46px 0 0;
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 500;
+    color: #FFFFFF;
 }
+
+.char-copy {
+  margin: 0 auto 120px;
+  /* margin-bottom: 50px; */
+  color: var(--txt-dim);
+  line-height: 1.7;
+  font-size: 26px;
+  text-align: center;
+}
+
+
 
 /* ===== 레이아웃 ===== */
 .char-block {
@@ -2290,7 +2478,7 @@ margin: 0;
 
 /* ===== 개별 이미지 설정 ===== */
 
-/* ✅ 1. 메인 부루니 (좌상단) */
+/* 메인 부루니 (좌상단) */
 
 .char-card.overlay{
   background-image: url("img/부루니캐릭터배경패턴.png");
@@ -2313,7 +2501,7 @@ margin: 0;
     position: absolute;
 }
 
-/* ✅ 2. 작은 부루니 2개 (좌하단) */
+/* 작은 부루니 2개 (좌하단) */
 .char-card.sub {
   display: flex;
   width: 100%;
