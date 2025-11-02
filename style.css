@@ -949,7 +949,7 @@ section.ov {
   height: 980px;
   background-color: #151515;
   color: #fff;
-  padding: 100px 0;
+  /* padding: 100px 0; */
 
   display: flex;              /* 플렉스 컨테이너로 설정 */
   align-items: center;        /* 수직 중앙 정렬 */
