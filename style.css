@@ -1342,6 +1342,7 @@ section.ov {
 
 /* ===== Fortune Intro Section ===== */
 .fortune-intro {
+  position: relative;
   background: linear-gradient(180deg, #F6F3FA 0%, #F1E6FF 100%);
   padding: 120px 0;
   text-align: center;
@@ -1382,8 +1383,10 @@ section.ov {
 /* 반원 (배경용) */
 .half-circle {
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  left: 50%;                        /* 부모의 가운데 기준 */
+  transform: translateX(-50%);  
+  bottom: 1250px;
+  width: 79%;
   height: 500px;
   border-top-left-radius: 1000px;
   border-top-right-radius: 1000px;
