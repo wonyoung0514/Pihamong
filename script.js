@@ -189,7 +189,7 @@ window.addEventListener('scroll', function() {
   rightCloud.style.opacity = `${1 - progress * 0.2}`;
 
   // 텍스트 페이드인 트리거
-  if (rect.top < windowHeight * 0.7) {
+  if (rect.top < windowHeight * 0.3) {
     text.classList.add('visible');
   } else {
     text.classList.remove('visible');
