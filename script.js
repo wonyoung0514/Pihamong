@@ -31,19 +31,21 @@ document.addEventListener("DOMContentLoaded", () => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // 뷰포트에 들어오면 show 클래스 추가
           target.classList.add("show");
         } else {
-          // 벗어나면 show 클래스 제거 → 다음에 다시 진입 시 재생됨
           target.classList.remove("show");
         }
       });
     },
-    { threshold: 0.6 }
+    {
+      threshold: 0.2,        
+      rootMargin: "0px 0px -10% 0px" // 아래쪽에서 10% 일찍 감지
+    }
   );
 
   observer.observe(target);
 });
+
 
 
 

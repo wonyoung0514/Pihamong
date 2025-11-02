@@ -19,7 +19,7 @@
                             <a href="#home" id="li1">Home</a>
                         </li>
                         <li>
-                            <a href="#video" id="li2">Video</a>
+                            <a href="#video2" id="li2">Video</a>
                         </li>
                         <li>
                             <a href="#app" id="li3">App</a>
@@ -33,7 +33,9 @@
                 <div class="container">
                     <section class="main-mockup-section">
                         <figure class="main-mockup" aria-label="앱 화면 목업">
-                            <img src="img/Mask group.png" alt="목업이미지">
+                            <img src="img/타이틀 피하몽.png" alt="목업이미지" class="title-txt">
+                            <img src="img/Mask group.png" alt="목업이미지" class="mockup-bg">
+                            <img src="img/캐릭터-모션.gif" alt="캐릭터모션" class="mockup-motion">
                         </figure>
                     </section>
                 </section>
@@ -46,7 +48,7 @@
                 <figure class="video-frame" aria-label="앱 소개 영상">
                     <video
                         id="appvi"
-                        src="./img/app.mp4"
+                        src="./video/1&2_정아.mp4"
                         controls="controls"
                         playsinline="playsinline"></video>
                 </figure>
@@ -390,20 +392,21 @@
                 </div>
 
                 <!-- 오른쪽: 텍스트 + 이미지 카드 -->
-                <div class="unlucky-right">
-                    <div class="text-box">
-                        <h4 class="subtitle">Unlucky area</h4>
-                        <h2 class="title">내 근처 불운지역은 어디?</h2>
-                        <p class="desc">
-                            실제 뉴스와 사건 데이터를 기반으로,<br>
-                            현재 위치를 중심으로 지역별 위험 지수와 그 이유를 제공합니다.
-                        </p>
-                    </div>
+<div class="unlucky-right">
+  <div class="unlucky-text">
+    <h4 class="unlucky-subtitle">Unlucky area</h4>
+    <h2 class="unlucky-title">내 근처 불운지역은 어디?</h2>
+    <p class="unlucky-desc">
+      실제 뉴스와 사건 데이터를 기반으로,<br>
+      현재 위치를 중심으로 지역별 위험 지수와 그 이유를 제공합니다.
+    </p>
+  </div>
 
-                    <div class="info-card">
-                        <img src="img/지도 팝업.png" alt="계원대사거리 정보 카드" class="info-img">
-                    </div>
-                </div>
+  <div class="unlucky-card">
+    <img src="img/지도 팝업.png" alt="계원대사거리 정보 카드" class="unlucky-img">
+  </div>
+</div>
+
 
             </div>
         </section>
@@ -579,7 +582,7 @@
                             <figure class="video-frame2" aria-label="앱 소개 영상2">
                                 <video
                                     id="appvi"
-                                    src="./img/app2.mp4"
+                                    src="./video/재연_부적,엔딩.mp4"
                                     controls="controls"
                                     playsinline="playsinline"></video>
                             </figure>
@@ -598,33 +601,53 @@
         </div>
 
         <footer class="site-footer">
-            <!-- 팀원 -->
-            <div class="footer-col">
-                <div class="footer-inner">
-                    <h2>Project Crew</h2>
-                    <ul>
-                        <li>Project manager<br>김솔휘<br>
-                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
-                        </li>
-                        <li>Project manager<br>김영찬<br>
-                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
-                        </li>
-                        <li>Designer<br>강재연<br>
-                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
-                        </li>
-                        <li>Designer<br>권단우<br>
-                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
-                        </li>
-                        <li>Designer<br>김정아<br>
-                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
-                        </li>
-                        <li>Programmer<br>이원영<br>
-                            <a href="https://github.com/wonyoung0514" target="_blank">Portfolio visit &gt;</a>
-                        </li>
-                    </ul>
+            <div class="footer-container">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="img/피하몽과로고.png" alt="피하몽과로고">
+                    </div>
+                    <p>불운 없는 일상의 시작.</p>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-group">
+                        <h3>planner</h3>
+                        <p>김솔휘 | Solwhi Kim
+                            <a href="#">↗</a>
+                        </p>
+                        <p>김영찬 | Yeongchan Kim
+                            <a href="#">↗</a>
+                        </p>
+                    </div>
+
+                    <div class="footer-group">
+                        <h3>Designer</h3>
+                        <p>강재연 | Jaeyeon Kang
+                            <a href="#">↗</a>
+                        </p>
+                        <p>권단우 | Danwoo Kwon
+                            <a href="#">↗</a>
+                        </p>
+                        <p>김정아 | Junga Kim
+                            <a href="#">↗</a>
+                        </p>
+                    </div>
+
+                    <div class="footer-group">
+                        <h3>Programmer</h3>
+                        <p>이원영 | Wonyoung Yi
+                            <a href="#">↗</a>
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            <div class="footer-bottom">
+                <p>Copyright © 2025 혼문.</p>
+                <p>Thank you for watching!</p>
+            </div>
         </footer>
+
     </div>
     <script src="script.js"></script>
 </body>
