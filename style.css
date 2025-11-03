@@ -1821,17 +1821,17 @@ section.ov {
 
 /* Funny → 메인 인터페이스 옆 */
 .ai-interaction .deco.funny {
-  top: -25%;
-  left: -200px;
-  width: 432px;
+  top: -20%;
+  left: -150px;
+  width: 330px;
   transform: rotate(-8deg);
 }
 
 /* Sweet → 오른쪽 아래 요괴 캐릭터 이미지 근처 */
 .ai-interaction .deco.sweet {
-  width: 434px;
+  width: 330px;
   bottom: -100px;
-  right: -260px;
+  right: -160px;
   transform: rotate(8deg);
 }
 
