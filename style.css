@@ -98,12 +98,12 @@ html {
 
 
 .container{
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom,
     rgb(17,8,14,1)   0%,
     rgba(147,45,255,.55) 50%,
     rgba(147,45,255,1) 100%
-  );
+  ); */
 }
 
 
@@ -133,12 +133,7 @@ html {
     text-align: left;
 }/* 메인 목업 섹션 */
 .main-mockup-section {
-  background: linear-gradient(
-    to bottom,
-    rgba(114,58,192) 0%,
-    rgba(64,29,120) 50%,
-    rgba(21,21,24) 100%
-  );
+  background:#151518;
   position: relative;
   overflow: hidden;
 }
@@ -160,6 +155,7 @@ html {
   height: auto;
   display: block;
   position: relative;
+  overflow: hidden;
   z-index: 1; /* 가장 뒤 */
 }
 
@@ -216,7 +212,15 @@ html {
 
 /* 비디오 섹션 */
 /* 섹션 배경과 여백 */
+
+.cloud-bg{
+  position: absolute;
+  z-index: 0;
+}
+
 .video-section {
+  position: relative; 
+  z-index: 5;
     background: #151518;
     padding: 48px 4vw 72px;
     /* 위/양옆/아래 여백 */
@@ -226,6 +230,7 @@ html {
 .video-container {
     max-width: 1200px;
     margin: 0 auto;
+    z-index: 6;
 }
 
 /* 섹션 타이틀 */
@@ -265,6 +270,7 @@ html {
   position: relative;
   max-width: none;              
   margin: 200px 0 200px;
+  z-index: 7;
 }
 
 /* ===== 비디오 프레임 (16:9 비율 유지) ===== */
@@ -1385,7 +1391,7 @@ section.ov {
   position: absolute;
   left: 50%;                        /* 부모의 가운데 기준 */
   transform: translateX(-50%);  
-  bottom: 1250px;
+  bottom: 1500px;
   width: 79%;
   height: 500px;
   border-top-left-radius: 1000px;
@@ -1402,8 +1408,8 @@ section.ov {
 .intro-img {
   position: relative;
   z-index: 2;
-  width: 874px;
-  max-width: 920px;
+  width: 1267px;
+  /* max-width: 920px; */
   height: auto;
   display: block;
   object-fit: contain;
@@ -1794,21 +1800,22 @@ section.ov {
 .ai-interaction .deco {
   position: absolute;
   width: 200px;
-  opacity: 0.9;
   pointer-events: none;
 }
 
 /* Funny → 메인 인터페이스 옆 */
 .ai-interaction .deco.funny {
-  top: -10%;
-  left: -100px;
+  top: -25%;
+  left: -200px;
+  width: 432px;
   transform: rotate(-8deg);
 }
 
 /* Sweet → 오른쪽 아래 요괴 캐릭터 이미지 근처 */
 .ai-interaction .deco.sweet {
-  bottom: -40px;
-  right: -80px;
+  width: 434px;
+  bottom: -100px;
+  right: -260px;
   transform: rotate(8deg);
 }
 
@@ -2061,7 +2068,7 @@ section.ov {
   max-width: 500px;
   height: auto;
   object-fit: cover;
-  margin-left: -160px;
+  margin-left: -150px;
 }
 
 
@@ -2486,12 +2493,35 @@ margin: 0;
   overflow: hidden;
 }
 
+.char-deco {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* 데코스티커 세부위치 */
+.deco-left {
+  top: 200px;
+  left: 100px;  
+  width: 210px;
+}
+
+.deco-right {
+  right: 0;
+  width: 200px;
+  top: 170px;
+}
+
+
 /* 텍스트 카드 */
 .char-text {
   border-radius: 60px;
   background: #683CC9;
   padding: 48px;
   color: #fff;
+  position: relative; /* 기준점 */ 
+  overflow: visible; /* 카드 밖으로 이미지가 삐져나오게 허용 */
 }
 
 .char-text h4 {
@@ -2712,10 +2742,10 @@ section.char-sec.douni .douni-main img {
 
 .char-sec.douni .douni-sub img {
   position: absolute;
-  bottom: -40px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 70%;
+  width: 100%;
   height: auto;
   object-fit: contain;
 }
