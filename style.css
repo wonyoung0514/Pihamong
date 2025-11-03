@@ -249,8 +249,8 @@ body, html {
 
 /* ===== Video Section (전체 영역 중앙 정렬) ===== */
 /* ===== 비디오 섹션 (화면 전체 확장) ===== */
-.video-section,
-.video-section2 {
+.video-section
+ {
   width: 100vw;                 /* 브라우저 전체 폭 */
   min-height: 100vh;            /* 화면 전체 높이 */
   background-color: #151518;
@@ -262,7 +262,18 @@ body, html {
   overflow: hidden;
   position: relative;
 }
-
+#video-section2{
+  width: 100vw;                 /* 브라우저 전체 폭 */
+  min-height: 100vh;            /* 화면 전체 높이 */
+  background-color: #181421;
+  padding: 0;                   
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
 
 /* ===== 비디오 컨테이너 (크기 확장) ===== */
 .video-container,
