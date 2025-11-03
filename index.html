@@ -50,7 +50,7 @@
                 <figure class="video-frame" aria-label="앱 소개 영상">
                     <iframe
                         id="appVideo"
-                        src="https://www.youtube.com/embed/i0tDO-O0DZE?si=mSjCSRkVFpFHpQKG"
+                        src="https://www.youtube.com/embed/u0fr_OPVlAo?si=JXpH_Bpw4ACYjsbf"
                         title="앱 소개 영상"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -124,54 +124,60 @@
             </div>
         </section>
 
-        <section class="survey-section">
-            <div class="inner">
-                <p class="question">
-                    <img src="img/Q.png" alt="Q" class="q-icon">
-                    운세를 보시는 가장 큰 이유는 무엇인가요?
-                </p>
-                <svg
-                    class="survey-chart"
-                    width="700"
-                    height="230"
-                    viewbox="0 0 700 230"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <g class="bar-group">
-                        <!-- 보라색 막대 -->
-                        <rect class="bar purple" x="0" y="0" width="685" height="110" rx="55" ry="55"></rect>
+<section class="survey-section">
+  <div class="inner">
+    <p class="question">
+      <img src="img/Q.png" alt="Q" class="q-icon">
+      운세를 보시는 가장 큰 이유는 무엇인가요?
+    </p>
 
-                        <!-- 레이블 -->
-                        <text class="label" x="52" y="55">재미, 호기심</text>
+    <svg
+      class="survey-chart"
+      width="700"
+      height="460"
+      viewBox="0 0 700 460"
+      xmlns="http://www.w3.org/2000/svg">
 
-                        <!-- 회색 막대 (보라색 오른쪽에 위치) -->
-                        <rect
-                            class="bar gray-box"
-                            x="1040"
-                            y="5"
-                            width="120"
-                            height="90"
-                            rx="45"
-                            ry="45"></rect>
+      <!-- 1위 -->
+<g class="bar-group">
+  <rect class="bar purple" x="0" y="0" width="685" height="110" rx="55" ry="55"></rect>
+  <text class="label" x="52" y="55">재미, 호기심</text>
 
-                        <!-- 퍼센트 텍스트 -->
-                        <text class="percent" x="1100" y="55">87%</text>
-                    </g>
+  <!-- 막대 확장 후 표시될 이미지 -->
+  <image
+    class="bar-icon"
+    href="img/설문조사 그래프 작대기 1.png"
+    x="920" 
+    y="25"
+    width="120"
+    height="60"
+    opacity="0" />
 
-                    <!-- 2위: 회색 막대 -->
-                    <g class="bar-group" transform="translate(0,130)">
-                        <rect class="bar gray" x="0" y="0" width="685" height="110" rx="55" ry="55"></rect>
-                        <text class="label" x="52" y="55">미래 대비</text>
-                    </g>
+  <rect class="bar gray-box" x="1040" y="5" width="120" height="90" rx="45" ry="45"></rect>
+  <text class="percent" x="1100" y="55">87%</text>
+</g>
 
-                    <!-- 3위: 진회색 막대 -->
-                    <g class="bar-group" transform="translate(0,260)">
-                        <rect class="bar darkgray" x="0" y="0" width="685" height="110" rx="55" ry="55"></rect>
-                        <text class="label" x="52" y="55">대화 소재</text>
-                    </g>
 
-                </svg>
-            </div>
-        </section>
+      <!-- 2위 -->
+      <g class="bar-group" transform="translate(0,130)">
+        <rect class="bar gray" x="0" y="0" width="685" height="110" rx="55" ry="55"></rect>
+        <text class="label" x="52" y="55">미래 대비</text>
+      </g>
+
+      <!-- 3위 -->
+      <g class="bar-group" transform="translate(0,260)">
+        <rect class="bar darkgray" x="0" y="0" width="685" height="110" rx="55" ry="55"></rect>
+        <text class="label" x="52" y="55">대화 소재</text>
+      </g>
+
+      <!-- 4위: 검정색 막대 추가 -->
+      <g class="bar-group" transform="translate(0,390)">
+        <rect class="bar black" x="0" y="0" width="685" height="110" rx="55" ry="55"></rect>
+      </g>
+    </svg>
+  </div>
+</section>
+
 
         <section class="attitude-section">
             <div class="inner">
@@ -206,11 +212,11 @@
 
         <!-- Insight -->
         <section id="Insight" class="is-sec">
-  <div class="cloud-wrap">
-    <div class="left-cloud"></div>
-    <div class="right-cloud"></div>
-  </div>
-            
+            <div class="cloud-wrap">
+                <div class="left-cloud"></div>
+                <div class="right-cloud"></div>
+            </div>
+
             <div class="is-inner">
                 <p class="is-eyebrow">
                     Insight
@@ -277,6 +283,7 @@
         <div class="notification-wrapper">
             <div class="notification-bg">
                 <section id="notification-sec" class="notification-sec">
+                    
                     <div class="inner">
                         <div class="text-box">
                             <h4 class="label">Notification</h4>
@@ -294,49 +301,59 @@
             </div>
         </div>
 
-        <section class="fortune-intro">
-            <section class="fortune-intro-background">
-                <div class="half-circle"></div>
-                <div class="inner">
-                    <p class="intro-label">Home</p>
-                    <h2 class="intro-title">
-                        오늘의 불운을 알고<br>
-                        햄삐한 하루를 보내자!
-                    </h2>
+        <!-- ===== 오늘의 불운 전체 묶음 섹션 ===== -->
+        <section class="fortune-wrapper">
 
-                    <!-- 반원 배경 + 메인 이미지 -->
-                    <div class="intro-visual">
-                        
-                        <img src="img/오늘의 불운 섹션 메인 이미지.png" alt="오늘의 불운 섹션 메인 이미지" class="intro-img">
-                    </div>
-                </div>
-            </section>
+            <!-- ===== 오늘의 불운 인트로 ===== -->
+            <section class="fortune-intro-wrapper">
+  <div class="fortune-intro-background">
+    <div class="inner">
 
-            <!-- 오늘의 불운 아이템 섹션 -->
-            <section class="unlucky-items">
-                <div class="inner">
-                    <div class="item-guide">
-                        <img src="img/오늘의 불운 아이템 가이드 이미지.png" alt="오늘의 불운 아이템 가이드 이미지" class="item-img">
-                    </div>
-                </div>
-            </section>
+      <!-- 인트로 -->
+      <p class="intro-label">Home</p>
+      <h2 class="intro-title">
+        오늘의 불운을 알고<br>
+        햅삐한 하루를 보내자!
+      </h2>
 
-            <!-- 하단 가이드 섹션 -->
-            <section class="unlucky-guides">
-                <div class="inner">
-                    <div class="guide-grid">
-                        <!-- 왼쪽 가이드 -->
-                        <div class="guide-box left">
-                            <img src="img/사고 위험 가이드 이미지.png" alt="사고 위험 가이드 이미지" class="guide-img">
-                        </div>
+      <!-- 반원 배경 -->
+      <div class="half-circle"></div>
 
-                        <!-- 오른쪽 가이드 -->
-                        <div class="guide-box right">
-                            <img src="img/불운 상담 가이드 이미지.png" alt="불운 상담 가이드 이미지" class="guide-img">
-                        </div>
-                    </div>
-                </div>
-            </section>
+      <!-- 메인 비주얼 -->
+      <div class="intro-visual">
+        <img src="img/오늘의 불운 섹션 메인 이미지.png" 
+             alt="오늘의 불운 섹션 메인 이미지" 
+             class="intro-img">
+      </div>
+
+      <!-- 오늘의 불운 아이템 -->
+      <div class="item-guide">
+        <img src="img/오늘의 불운 아이템 가이드 이미지.png" 
+             alt="오늘의 불운 아이템 가이드 이미지" 
+             class="item-img">
+      </div>
+
+      <!-- 오늘의 불운 가이드 -->
+      <div class="unlucky-guides">
+        <div class="guide-grid">
+          <div class="guide-box left">
+            <img src="img/사고 위험 가이드 이미지.png" 
+                 alt="사고 위험 가이드 이미지" 
+                 class="guide-img">
+          </div>
+          <div class="guide-box right">
+            <img src="img/불운 상담 가이드 이미지.png" 
+                 alt="불운 상담 가이드 이미지" 
+                 class="guide-img">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
         </section>
 
         <section class="Badluck-report">
@@ -429,8 +446,8 @@
                         <h4 class="unlucky-subtitle">Unlucky area</h4>
                         <h2 class="unlucky-title">내 근처 불운지역은 어디?</h2>
                         <p class="unlucky-desc">
-                            실제 뉴스와 사건 데이터를 기반으로,<br>
-                            현재 위치를 중심으로 지역별 위험 지수와 그 이유를 제공합니다.
+                            실제 뉴스와 사건 데이터를 기반으로,현재 위치를 중심으로<br>
+                            지역별 위험 지수와 그 이유를 제공합니다.
                         </p>
                     </div>
 
@@ -551,14 +568,14 @@
                             <div class="char-block">
                                 <!-- 왼쪽: 메인 캐릭터 -->
                                 <div class="char-col left">
-                                    
+
                                     <div class="char-card overlay">
                                         <img src="img/B웃음_부루니기본.png" alt="부루니 메인 캐릭터">
-                                        
+
                                     </div>
-                                    
+
                                     <div class="char-card sub">
-                                        
+
                                         <img src="img/화난_부루니기본.png" alt="부루니 작은 캐릭터">
                                         <img src="img/자산 1부루니로고 1.png" alt="부루니 작은 캐릭터">
                                     </div>
@@ -574,12 +591,11 @@
                                             드냐몽? 그렇다면, 내가 네 주변에 있을지도 모른다몽.<br>
                                             <span class="highlight">...불운은 아무도 모르게 찾아오니까.</span>
                                         </p>
-                                        
+
                                     </div>
-                                    
-                                    
+
                                     <div class="char-card image">
-                                        
+
                                         <img src="img/캐릭터_부루니.png" alt="부루니 하단 캐릭터 이미지">
 
                                     </div>
@@ -599,7 +615,8 @@
                                     <div class="char-card douni-text">
                                         <h4>도우니</h4>
                                         <p>
-                                            부에..어뎌 이거 가져가라뭉. <br>
+                                            부에..어뎌 이거 가져가라뭉.
+                                            <br>
                                             이 부적이면 네 하루가 더 나아질거다뭉!<br>
                                             <span class="highlight">...네가 겪는 불운은 곧 사라질 거다뭉!</span>
                                         </p>
@@ -612,11 +629,11 @@
                                 <!-- 2행: 작은 도우니 -->
                                 <div class="char-row bottom">
                                     <div class="char-card douni-sub">
-                                       
+
                                         <img src="img/도우니 기본형 1.png" alt="도우니 기본형"/>
-                                        
+
                                     </div>
-                                     <img src="img/부루니데코 캐릭터.png" alt="부루니데코" class="char-deco deco-left">
+                                    <img src="img/부루니데코 캐릭터.png" alt="부루니데코" class="char-deco deco-left">
                                 </div>
 
                             </div>
@@ -628,7 +645,7 @@
                             <figure class="video-frame" aria-label="앱 소개 영상">
                                 <iframe
                                     id="appVideo"
-                                    src="https://www.youtube.com/embed/nVdFMXn9L1w?si=7fF-06J4zJneB3Yf"
+                                    src="https://www.youtube.com/embed/61U3VdF1Qa8?si=pKm-tqdrvd_l-kZm"
                                     title="앱 소개 영상"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

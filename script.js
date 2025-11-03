@@ -59,21 +59,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const groups = chart ? chart.querySelectorAll(".bar-group") : [];
   if (!chart || groups.length === 0) return;
 
-  // 3위 → 2위 → 1위 순서
-  const ordered = [groups[2], groups[1], groups[0]];
+  const ordered = [groups[3], groups[2], groups[1], groups[0]];
 
-  // 타이밍 설정
   const riseDur   = 0.5;
   const stagger   = 0.15;
   const textGap   = 0.05;
   const expandDur = 0.5;
+  const imgFadeDur = 0.5;
   const buffer    = 0.1;
 
-  // 모든 막대/텍스트 초기화
+  // 초기화
   const resetAll = () => {
     groups.forEach((g) => {
       const bars = g.querySelectorAll(".bar");
       const texts = g.querySelectorAll(".label, .percent");
+      const icons = g.querySelectorAll(".bar-icon");
+
       bars.forEach((bar) => {
         bar.style.animation = "none";
         bar.style.opacity = "0";
@@ -82,36 +83,45 @@ document.addEventListener("DOMContentLoaded", () => {
         t.style.animation = "none";
         t.style.opacity = "0";
       });
-      void g.offsetHeight; // reflow
+      icons.forEach((i) => {
+        i.style.opacity = "0";
+        i.style.transition = "none";
+      });
+      void g.offsetHeight;
     });
   };
 
-  // 메인 애니메이션 재생
+  // 메인 애니메이션
   const play = () => {
     resetAll();
 
     ordered.forEach((group, idx) => {
-      const bars = group.querySelectorAll(".bar");
-      const texts = group.querySelectorAll(".label, .percent");
-
+      // 퍼센트 박스 제외
+      const bars = group.querySelectorAll(".bar:not(.gray-box)");
+      const texts = group.querySelectorAll(".label");
       const delay = idx * stagger;
 
-      // 모든 막대에 rise 적용 (보라색, 회색 포함)
+      // 막대 등장
       bars.forEach((bar) => {
         bar.style.animation = `rise ${riseDur}s ease-out ${delay}s forwards`;
       });
 
-      // 텍스트는 막대 후 등장
+      // 일반 텍스트 등장
       const textDelay = delay + riseDur + textGap;
       texts.forEach((t) => {
         t.style.animation = `riseText 0.5s ease-out ${textDelay}s forwards`;
       });
     });
 
-    // 마지막(보라색) 막대 확장
+    // 1위 막대 관련 처리
     const allBarsDone = (ordered.length - 1) * stagger + riseDur + buffer;
     const topGroup = groups[0];
     const topBar = topGroup.querySelector(".bar.purple");
+    const topIcon = topGroup.querySelector(".bar-icon");
+    const percentBox = topGroup.querySelector(".bar.gray-box");
+    const percentText = topGroup.querySelector(".percent");
+
+    // 1위 막대 확장
     if (topBar) {
       const existing =
         topBar.style.animation && topBar.style.animation !== "none"
@@ -119,9 +129,31 @@ document.addEventListener("DOMContentLoaded", () => {
           : "";
       topBar.style.animation = `${existing}expand ${expandDur}s ease-out ${allBarsDone}s forwards`;
     }
+
+    // 이미지 등장
+    if (topIcon) {
+      const imgDelay = (allBarsDone + expandDur) * 1000;
+      setTimeout(() => {
+        topIcon.style.opacity = "1";
+        topIcon.style.transition = `opacity ${imgFadeDur}s ease-out`;
+      }, imgDelay);
+
+      // 이미지 완전히 나타난 후 퍼센트 박스 + 텍스트 등장
+      const percentDelay = imgDelay + imgFadeDur * 1000;
+      setTimeout(() => {
+        if (percentBox) {
+          percentBox.style.opacity = "1";
+          percentBox.style.animation = `rise ${riseDur}s ease-out forwards`;
+        }
+        if (percentText) {
+          percentText.style.opacity = "1";
+          percentText.style.animation = `riseTextPercent 0.5s ease-out forwards`;
+        }
+      }, percentDelay);
+    }
   };
 
-  // IntersectionObserver: 스크롤로 보일 때마다 실행
+  // 스크롤 트리거
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -132,11 +164,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.4 } // 40% 이상 보이면 실행
+    { threshold: 0.4 }
   );
 
   observer.observe(chart);
 });
+
+
+
 
 
 

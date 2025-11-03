@@ -389,11 +389,26 @@ section.ov {
 }
 
 .ov__side img {
-  width: 160%;
+  position: relative;
+  right: 110px;
+  width: 170%;
   height: auto;
   object-fit: contain;
   transform-origin: right bottom;
+    animation: floatY 2.5s ease-in-out infinite;
 }
+
+
+/* 둥둥애니메이션 */
+@keyframes floatY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 
 /* 반응형 */
 @media (max-width: 1024px) {
@@ -533,7 +548,7 @@ section.ov {
 .sv-title .highlight,
 .ov__title .highlight,
 .is-title .highlight{
-  color: #b28aff;
+  color: #A247FF;
 }
 
 /* 서브 문장 */
@@ -663,7 +678,7 @@ section.ov {
 
 /* ===== 색상 스타일 ===== */
 .att-card.purple {
-  background: #b247ff;
+  background: #A247FF;
   color: #ffffff;
 }
 
@@ -1025,7 +1040,7 @@ section.ov {
 
 /* 보라색만 올라온 후 길어지는 애니메이션 추가 */
 .bar.purple {
-  fill: #b247ff;
+  fill: #A247FF;
   animation: rise 0.8s ease-out forwards, expand 0.7s ease-out 0.8s forwards;
 }
 
@@ -1035,6 +1050,10 @@ section.ov {
 
 .bar.darkgray {
   fill: #5b5967;
+}
+
+.bar black{
+  fill:#2B2B31;
 }
 
 /* ===== Text Styles ===== */
@@ -1093,10 +1112,15 @@ section.ov {
     visibility: hidden;
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(3px);
     opacity: 1;
     visibility: visible;
   }
+}
+
+@keyframes riseTextPercent {
+  0% { transform: translateY(65px); opacity: 0; }
+  100% { transform: translateY(-3px); opacity: 1; } /* 퍼센트는 더 아래 */
 }
 
 
@@ -1129,11 +1153,11 @@ section.ov {
 .keyword-text {
   /* font-size: clamp(2rem, 6vw, 5rem); */
   font-size: 200px;
-  font-weight: 700;
+  font-weight: 400;
   opacity: 0;
   transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
   white-space: nowrap;
-  /* line-height: 1.2; */
+  line-height: 1;
   position: relative;
 }
 
@@ -1250,6 +1274,7 @@ section.ov {
     display: flex;
   flex-direction: column;
   justify-content: flex-end; /* 아래쪽 정렬 */
+  padding-top: 27.54px; 
 }
 
 
@@ -1259,10 +1284,16 @@ section.ov {
 }
 
 
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+}
+
 .notification-bg {
 
-  border-top-left-radius: 80px;
-  border-top-right-radius: 80px;
+  border-top-left-radius: 196.46px;
+  border-top-right-radius: 196.46px;
   overflow: hidden; /* 라운드 안쪽만 표시 */
   position: relative;
   z-index: 2;
@@ -1282,7 +1313,7 @@ section.ov {
 .notification-sec .inner {
   width: calc(661px + 40px + 660.14px);
   /* min-height: 1436px; */
-    justify-content: flex-start; /* 상단 기준 정렬 유지 */
+  justify-content: flex-start; /* 상단 기준 정렬 유지 */
   position: relative; /* 내부 mockup 절대 위치용 기준 */
   margin: 0 auto;
   box-sizing: border-box;
@@ -1302,7 +1333,7 @@ section.ov {
   color: #8F21FF;
   font-weight: 600;
   font-size: 30px;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
 }
 
 .notification-sec .title {
@@ -1315,7 +1346,9 @@ section.ov {
 .notification-sec .desc {
   font-size: 32px;
   color: #5f5f5f;
-  /* line-height: 1.7; */
+  margin-top: 9px;
+  margin-bottom: 72px;
+
 }
 
 /* ===== 목업 이미지 ===== */
@@ -1331,8 +1364,8 @@ section.ov {
 }
 
 .notification-sec .mockup {
-  width: 1023px;
-  height: 1053px;
+  width: 1005.84px;
+  height: 1066px;
   /* bottom: 0; */
   transform: translateY(500px);
   opacity: 0;
@@ -1363,24 +1396,29 @@ section.ov {
 
 
 
-/* ===== Fortune Intro Section ===== */
-.fortune-intro {
+/* ===== 전체 섹션 ===== */
+.fortune-intro-wrapper {
+  background: linear-gradient(180deg, #F6F3FA 0%, #F1E6FF 50%, #E3D4FF 100%);
   position: relative;
-  background: linear-gradient(180deg, #F6F3FA 0%, #F1E6FF 100%);
-  padding: 120px 0;
+  overflow: visible;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  padding: 246px 0 246px; /* 아래로 여유 */
+  z-index: 0;
 }
 
-.fortune-intro .inner {
-  width: calc(661px + 40px + 660.14px);
+.fortune-intro-background {
+  background: transparent;
+  position: relative;
+}
+
+.fortune-intro-wrapper .inner {
+  position: relative;
+  width: calc(661px + 40px + 660px);
   margin: 0 auto;
-  box-sizing: border-box;
-  position: relative;
+  z-index: 2;
 }
 
-/* ===== Texts ===== */
+/* ===== 텍스트 ===== */
 .intro-label {
   color: #8F21FF;
   font-weight: 500;
@@ -1390,119 +1428,84 @@ section.ov {
 
 .intro-title {
   font-size: 48px;
-  /* line-height: 1.4; */
   color: #2b2733;
   margin-bottom: 60px;
   font-weight: 600;
 }
 
-/* ===== Visual Area ===== */
+/* ===== 반원 배경 ===== */
+.half-circle {
+  position: absolute;
+  left: 50%;
+  top: 430px;
+  /* bottom: -300px; */
+  transform: translateX(-50%);
+  width: 100%;
+  height: 900px;
+  border-top-left-radius: 1000px;
+  border-top-right-radius: 1000px;
+  background: linear-gradient(180deg, #d9c4ff 0%, #e7d9ff 100%);
+  z-index: 0;
+  /* mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%); */
+
+    /* === 밑으로 갈수록 점점 투명해짐 === */
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
+}
+
+/* ===== 메인 비주얼 ===== */
 .intro-visual {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-/* 반원 (배경용) */
-.half-circle {
-  position: absolute;
-  left: 50%;                        /* 부모의 가운데 기준 */
-  transform: translateX(-50%);  
-  bottom: 1500px;
-  width: 79%;
-  height: 500px;
-  border-top-left-radius: 1000px;
-  border-top-right-radius: 1000px;
-  background: linear-gradient(180deg, #d9c4ff 0%, #e7d9ff 100%);
-  z-index: 1;
-
-  /* 부드러운 사라짐 효과 */
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-}
-
-/* 메인 이미지 */
-.intro-img {
-  position: relative;
+  align-items: flex-end;
+  margin-bottom: 294px;
   z-index: 2;
-  width: 1267px;
-  /* max-width: 920px; */
+}
+
+.intro-img {
+  max-width: 100%;
   height: auto;
-  display: block;
-  object-fit: contain;
 }
 
-
-/* ===== 공통 inner ===== */
-.inner {
-  width: calc(661px + 40px + 660.14px);
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-/* ===== 오늘의 불운 아이템 섹션 ===== */
-.unlucky-items {
-  background: transparent;
-  padding: 100px 0 45px;
-  /* padding-bottom: 50px; */
-}
-
+/* ===== 아이템 가이드 ===== */
 .item-guide {
-  width: 100%;
-  border-radius: 32px;
-  overflow: hidden;
-  justify-content: center;
-  object-fit: cover;
-  align-items: center;
-  display: block;
-}
-
-.item-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* ===== 하단 가이드 섹션 ===== */
-.unlucky-guides {
-  background: transparent;
-  padding: 100px 0 70px;
-  padding-top: 0;
-}
-
-.guide-grid {
-  display: grid;
-  grid-template-columns: 661px 660.14px;
-  column-gap: 40px;
-  justify-content: center;
-  align-items: stretch;
-}
-
-.guide-box {
-  border-radius: 32px;
-  overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
+  margin-bottom: 100px;
+  z-index: 2;
+}
+
+.item-img {
+  /* max-width: 700px; */
+  height: auto;
+}
+
+/* ===== 불운 가이드 ===== */
+.unlucky-guides {
+  position: relative;
+  z-index: 2;
+}
+
+.guide-grid {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
-/* 각 가이드 비율 (이미지에 맞게 조정 가능) */
-.guide-box.left {
-  aspect-ratio: 661 / 412; /* 왼쪽 */
-}
-
-.guide-box.right {
-  aspect-ratio: 661 / 412; /* 오른쪽 */
+.guide-box {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
 }
 
 .guide-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 
@@ -1541,12 +1544,12 @@ section.ov {
   align-items: center;
 }
 
-/* 💜 DAILY 전용 luck-inner */
+/* DAILY 전용 luck-inner */
 .luck-sec--daily .luck-inner {
-  padding: 120px 0 0;  
+  padding: 246px 0 0;  
 }
 
-/* 💙 MONTHLY 전용 luck-inner */
+/* MONTHLY 전용 luck-inner */
 .luck-sec--monthly .luck-inner {
   padding: 100px 0 210px; 
 }
@@ -1780,7 +1783,7 @@ section.ov {
 }
 
 .ai-interaction .desc {
-  font-size: 24px;
+  font-size: 32px;
   /* line-height: 1.7; */
   color: #5f5f5f;
 }
@@ -1979,49 +1982,61 @@ section.ov {
 /* =======================================================
    ===== Unlucky Section (불운 지역 섹션 전체) =====
 ======================================================= */
+/* ===== Unlucky Section ===== */
 .unlucky-section {
   background-image: url("img/Unlucky area 배경.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 100px 0 0;
-  overflow: hidden;
-  position: relative;
+  width: 100%;
+  height: 1161px;
+  display: flex;                  /* 전체 flex 컨테이너 */
+  justify-content: center;        /* 내부 .inner를 수평 중앙 정렬 */
+  align-items: center;            /* 수직 중앙 정렬 */
   font-family: "Pretendard", sans-serif;
+  position: relative;
+  overflow: hidden;
+  padding: px 0;
 }
 
 /* ===== Inner Layout ===== */
+
 .unlucky-section .inner {
-  width: calc(661px + 40px + 660.14px);
-  margin: 0 auto;
-  box-sizing: border-box;
-  height: 1080px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+  justify-content: center;    /* 수평 중앙 정렬 */
+  align-items: flex-end;      /* 수직 하단 정렬 */
+  gap: 76px;                  /* 좌우 간격 */
+  max-width: 1360px;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;         /* 부모(.unlucky-section) 기준 절대 위치 */
+  bottom: 0;                  /* 하단에 붙임 */
+  left: 50%;                  /* 수평 중앙 정렬 */
+  transform: translateX(-50%);/* 중앙 기준으로 위치 조정 */
 }
 
-/* ===== Left: Phone Guide ===== */
+
+/* ===== Left / Right Layout ===== */
 .unlucky-left {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 246px;
 }
-
 .phone-guide {
   width: 100%;
-  max-width: 661px;
-  aspect-ratio: 9 / 16;
+  max-width: 663.14px; /* 이미지의 실제 크기 기준 */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible; /* 이미지 크기에 맞게 부모도 확장 */
 }
 
 .phone-img {
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 92%; */
+  width: 656.05px;
   object-fit: contain;
   object-position: bottom center;
   display: block;
@@ -2030,9 +2045,9 @@ section.ov {
 /* ===== Right: Text + Info Image ===== */
 .unlucky-right {
   flex: 1;
-  max-width: 660px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 40px;
   color: #2a1b44;
 }
@@ -2049,13 +2064,13 @@ section.ov {
   color: #9a6fff;
   font-size: 30px;
   font-weight: 600;
-  margin-top: 220px;
-  margin-bottom: 95px;
+
 }
 
 /* --- Title --- */
 .unlucky-title {
   font-size: 48px;
+  white-space: nowrap;
   font-weight: 600;
   margin-bottom: 16px;
   color: #2a1b44;
@@ -2070,6 +2085,7 @@ section.ov {
   overflow: visible;
   text-overflow: clip;
   max-width: none;
+  margin-bottom: 20px;
 }
 
 /* =======================================================
@@ -2082,11 +2098,13 @@ section.ov {
 }
 
 .unlucky-img {
-  width: 100%;
-  max-width: 500px;
+  width: 539.46px;
+  height: 567.82px;
+  /* max-width: 500px; */
   height: auto;
   object-fit: cover;
-  margin-left: -150px;
+  margin-bottom: 60px;
+  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.25));
 }
 
 
@@ -2138,7 +2156,7 @@ section.ov {
   z-index: 0;
 
   width: 100%;
-  height: 254px; /* ✅ 원하는 높이로 지정 */
+  height: 254px; /* 원하는 높이로 지정 */
 }
 
 .bg-wrapper {
@@ -2516,7 +2534,7 @@ margin: 0;
   position: absolute;
   z-index: 5;
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 /* 데코스티커 세부위치 */
@@ -2589,7 +2607,7 @@ margin: 0;
 .char-card.sub {
   display: flex;
   width: 100%;
-  height: 126%;
+  height: 120%;
   justify-content: center;
   align-items: flex-end;
   gap: 32px;
@@ -2858,8 +2876,8 @@ section.char-sec.douni .douni-main img {
 .site-footer {
     background: #3d0a7d;
     color: #fff;
-    font-family: 'Pretendard', sans-serif;
-    padding: 60px 272px 30px;
+    font-family: 'Pretendard';
+    padding: 150px 272px 150px;
 }
 
 /* 상단 구조 */
