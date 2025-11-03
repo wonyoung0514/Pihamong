@@ -2507,15 +2507,15 @@ margin: 0;
 
 /* 데코스티커 세부위치 */
 .deco-left {
-  top: 200px;
-  left: 100px;  
+  top: 290px;
+  left: 90px;  
   width: 210px;
 }
 
 .deco-right {
   right: 0;
   width: 200px;
-  top: 170px;
+  top: 210px;
 }
 
 
@@ -2530,14 +2530,14 @@ margin: 0;
 }
 
 .char-text h4 {
-  font-size: 1.5rem;
-  margin: 0 0 12px;
+  font-size: 40px;
+  margin:  0 0px;
   font-weight: 700;
   color: #fff;
 }
 
 .char-text p {
-  font-size: 0.95rem;
+  font-size: 27px;
   color: #E3DDFF;
   line-height: 1.8;
 }
@@ -2678,15 +2678,17 @@ section.char-sec.douni .char-card.douni-text {
 
 /* 제목과 문단 간격 조정 */
 section.char-sec.douni .char-card.douni-text h4 {
-  font-size: 2rem;
+  font-size: 40px;
   font-weight: 800;
-  margin: 0 0 16px;
+  padding: 16px 100px 16px;
+  margin: 16px 0 16px;
   color: #ffffff;
   align-self: flex-start;
 }
 
 section.char-sec.douni .char-card.douni-text p {
-  font-size: 1rem;
+  font-size: 27px;
+  padding: 16px 100px 16px;
   color: #FFFFFF;
   line-height: 1.8;
   margin: 0;
