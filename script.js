@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         topIcon.style.transition = `opacity ${imgFadeDur}s ease-out`;
       }, imgDelay);
 
-      // 이미지 완전히 나타난 후 퍼센트 박스 + 텍스트 등장
+      // 이미지 완전히 나타난 후 퍼센트 박스, 텍스트 등장
       const percentDelay = imgDelay + imgFadeDur * 1000;
       setTimeout(() => {
         if (percentBox) {
@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Daily
   observeMockupGroup(".luck-group-daily", ".mockup-daily", false, 200);
-  // Monthly (수정된 대상)
+  // Monthly
   observeMockupGroup(".luck-group-monthly", ".mockup-monthly", true, 180);
 });
 

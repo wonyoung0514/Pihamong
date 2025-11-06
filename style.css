@@ -51,8 +51,8 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 59px;   /* 로고 영역 너비 */
-  height: auto;   /* 세로 자동 비율 유지 */
+  width: 59px;  
+  height: auto;   
 }
 
 .main-logo img {
@@ -82,7 +82,6 @@ body, html {
 
 #main {
     background: #ffffff;
-    /* 원하는 색으로 변경 */
 }
 
 #main #slogan,
@@ -102,14 +101,6 @@ body, html {
 }
 
 
-.container{
-  /* background: linear-gradient(
-    to bottom,
-    rgb(17,8,14,1)   0%,
-    rgba(147,45,255,.55) 50%,
-    rgba(147,45,255,1) 100%
-  ); */
-}
 
 
 /* 모든 섹션의 내부 컨테이너를 동일하게 */
@@ -128,15 +119,18 @@ body, html {
     grid-column: 1;
     text-align: left;
 }
+
 .sg-eyebrow,
 .sg-sub,
 .sg-title {
     grid-column: 1;
     text-align: left;
 }
+
 .ex-copy {
     text-align: left;
-}/* 메인 목업 섹션 */
+}
+
 .main-mockup-section {
   background:#151518;
   position: relative;
@@ -154,7 +148,7 @@ body, html {
   place-items: center;
 }
 
-/* 배경 이미지 (맨 뒤) */
+/* 배경 이미지  */
 .main-mockup .mockup-bg {
   width: 100%;
   height: auto;
@@ -164,7 +158,7 @@ body, html {
   z-index: 1; /* 가장 뒤 */
 }
 
-/* 캐릭터 모션 (중간 레이어) */
+/* 캐릭터 모션  */
 .main-mockup .mockup-motion {
   position: absolute;
   top: 60%;
@@ -175,25 +169,25 @@ body, html {
   z-index: 2; /* 중간 */
 }
 
-/* 타이틀 텍스트 (맨 위 레이어) */
+/* 타이틀 텍스트 */
 .main-mockup .title-txt {
   position: absolute;
   top: 20%; 
   left: 50%;
   transform: translateX(-50%);
-  width: 20%; /* 크기 조정 */
+  width: 20%; 
   z-index: 3; /* 맨 위 */
   pointer-events: none;
 }
 
 .main-mockup .mockup-back {
   position: absolute;
-  top: 60%;        /* 캐릭터 기준 중앙 */
+  top: 60%;        
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;     
   opacity: 0.8;    
-  z-index: 1.5;    /* 캐릭터보다 아래, 배경보다 위 */
+  z-index: 1.5;    
   pointer-events: none;
 }
 
@@ -203,11 +197,11 @@ body, html {
   bottom: 65%;                /* 상단 정렬 */
   left: 50%;              /* 수평 중앙 기준 */
   transform: translateX(-50%);
-  width: 100%;            /* 단풍이 화면 가로 전체 덮도록 */
+  width: 100%;            
    opacity: 0.6; 
   height: auto;
   object-fit: cover;
-  z-index: 1.3;           /* mockup-bg(1)보다 위, mockup-back(1.5)보다 아래 */
+  z-index: 1.3;           
   pointer-events: none;   /* 클릭 방지 */
 }
 
@@ -217,7 +211,6 @@ body, html {
 
 /* 비디오 섹션 */
 /* 섹션 배경과 여백 */
-
 .cloud-bg{
   position: absolute;
   z-index: 0;
@@ -227,9 +220,8 @@ body, html {
 .video-section {
   position: relative; 
   z-index: 5;
-    background: #151518;
-    padding: 48px 4vw 72px;
-    /* 위/양옆/아래 여백 */
+  background: #151518;
+  padding: 48px 4vw 72px;
 }
 
 /* 가운데 정렬 컨테이너 */
@@ -248,12 +240,12 @@ body, html {
     font-size: clamp(18px, 2.2vw, 24px);
 }
 
-/* ===== Video Section (전체 영역 중앙 정렬) ===== */
-/* ===== 비디오 섹션 (화면 전체 확장) ===== */
+
+/* ===== 비디오 섹션 ===== */
 .video-section
  {
-  width: 100vw;                 /* 브라우저 전체 폭 */
-  min-height: 100vh;            /* 화면 전체 높이 */
+  width: 100vw;                
+  min-height: 100vh;           
   background-color: #151518;
   padding: 0;                   
   margin: 0;
@@ -264,8 +256,8 @@ body, html {
   position: relative;
 }
 #video-section2{
-  width: 100vw;                 /* 브라우저 전체 폭 */
-  min-height: 100vh;            /* 화면 전체 높이 */
+  width: 100vw;                
+  min-height: 100vh;            
   background-color: #181421;
   padding: 0;                   
   margin: 0;
@@ -276,7 +268,7 @@ body, html {
   position: relative;
 }
 
-/* ===== 비디오 컨테이너 (크기 확장) ===== */
+/* ===== 비디오 컨테이너  ===== */
 .video-container,
 .video-container2 {
   width: 100%;                  
@@ -290,7 +282,7 @@ body, html {
   z-index: 7;
 }
 
-/* ===== 비디오 프레임 (16:9 비율 유지) ===== */
+/* ===== 비디오 프레임 ===== */
 .video-frame,
 .video-frame2 {
   width: 78vw;                  /* 뷰포트 기준 폭 */
@@ -303,7 +295,7 @@ body, html {
   border: none;
 }
 
-/* ===== 유튜브 iframe (플레이어 자체 확장) ===== */
+/* ===== 유튜브 iframe ===== */
 .video-frame iframe,
 .video-frame2 iframe {
   width: 100%;
@@ -364,7 +356,6 @@ section.ov {
 .ov__title {
   font-size: 64px;
   font-weight: 600;
-  /* line-height: 1.3; */
   color: #fff;
   padding-bottom: 30px;
   margin: 0;
@@ -378,7 +369,6 @@ section.ov {
 .ov__box {
   font-size: 26px;
   color: #C3C3D2;
-  /* line-height: 1.8; */
   max-width: 600px;
 }
 
@@ -511,7 +501,6 @@ section.ov {
 /* 각각의 위치 조정 */
 .shirt {
   top: 50%;
-  /* right: 55%; */
   right: 40%;
   width: 120%;
 
@@ -525,7 +514,6 @@ section.ov {
 
 .hairband {
   top: 85%;
-  /* left: 100%; */
   left: 80%;
   width: 45%;
 }
@@ -536,11 +524,9 @@ section.ov {
 .hero-title {
     margin: 0 auto 20px;
     padding: 20px 28px;
-    /* background: #e6e7e9; */
     border-radius: 12px;
     display: inline-block;
     font-size: 70px;
-    /* line-height: 1.5; */
     font-weight: 600;
 }
 
@@ -554,10 +540,10 @@ section.ov {
 /* 서브 문장 */
 .sv-sec .sv-inner
 {
-  max-width: 1100px;       /* 필요 시 가이드 폭 */
+  max-width: 1100px;       
   margin: 0 auto;
   text-align: center;
-  padding: 56px 5vw 72px;  /* 임의 여백 */
+  padding: 56px 5vw 72px;  
 }
 
 
@@ -567,11 +553,10 @@ section.ov {
 
 /* 응답 기간 카드 */
 .sv__period{
-  width: min(560px, 72vw); /* 원하는 최대/반응형 폭으로 조절 */
+  width: min(560px, 72vw); 
   margin: 24px auto 0;     
 }
 
-/* 실제 이미지 크기 제어는 img에 */
 .sv__period img{
   width: 100%;
   height: auto;
@@ -616,9 +601,7 @@ section.ov {
   color: #C3C3D2;
   font-size: 32px;
   margin-bottom: 100px;
-  /* line-height: 1.6; */
-
-    display: flex;             /* 이미지와 텍스트를 가로로 배치 */
+  display: flex;             /* 이미지와 텍스트를 가로로 배치 */
   align-items: flex-start;       /* 위쪽 정렬 */
   gap: 32px;                 /* 이미지와 텍스트 간격 */
 }
@@ -744,9 +727,7 @@ section.ov {
     background-size: cover;
     background-position: center;
     object-fit: cover;
-    /* background: #151518; */
     color: #fff;
-    /* padding: 56px 5vw 72px; */
     scroll-margin-top: 80px;
     /* 고정 헤더 보정 */
     overflow: hidden;
@@ -765,7 +746,6 @@ section.ov {
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* height: 100%;  */
 }
 
 /* 타이틀 영역 */
@@ -782,9 +762,7 @@ section.ov {
     margin: 0 auto 20px;
     padding: 46px 28px;
     text-align: center;
-    /* display: inline-block; */
     font-size: 70px;
-    /* line-height: 1.05; */
     font-weight: 600;
     color: #FFFFFF;
 }
@@ -803,9 +781,7 @@ section.ov {
     margin: 0 auto 40px;
     padding: 46px 0 0;
     text-align: center;
-    /* display: inline-block; */
     font-size: 70px;
-    /* line-height: 1.05; */
     font-weight: 600;
     color: #FFFFFF;
 }
@@ -824,11 +800,9 @@ section.ov {
 #service-goal .sg-stage {
     box-sizing: border-box;
     max-width: min(var(--content-max), 90vw);
-    /* home과 동일 폭 */
     margin: 0;
     /* 패널의 좌우 padding이 가터 역할 */
     padding-block: clamp(56px, 12vh, 140px);
-    /* 상/하 여백도 home과 동일 */
     display: grid;
     grid-template-columns: minmax(320px,1.2fr) 1fr;
     grid-template-areas: "eyebrow mocks" "title mocks" "sub mocks";
@@ -849,7 +823,6 @@ section.ov {
     grid-area: title;
     margin: 8px 0;
     font-weight: 800;
-    /* line-height: 1.05; */
     font-size: clamp(32px,6vw,64px);
 }
 #service-goal .sg-sub {
@@ -891,19 +864,14 @@ section.ov {
 
 
 /* Insight */
-
 .is-sec {
-  /* background-image: url("img/합친\ 구름.png"); */
   position: relative;
   width: auto;
   height: 1080px;
   background: #151518;
-  /* color: #fff; */
-  /* background: transparent; */
   padding: 56px 5vw 72px;
   scroll-margin-top: 80px;
-    /* 고정 헤더 보정 */
-
+  /* 고정 헤더 보정 */
   display: flex;              
   justify-content: center;    /* 가로 중앙 정렬 */
   align-items: center; 
@@ -914,7 +882,7 @@ section.ov {
   max-width: 1100px;       /* 필요 시 가이드 폭 */
   margin: 0 auto;
   text-align: center;
-  padding: 56px 5vw 72px;  /* 임의 여백 */
+  padding: 56px 5vw 72px;  
 }
 
 
@@ -936,14 +904,12 @@ section.ov {
 #Insight .right-cloud {
   position: absolute;
   top: 0;
-  width: 1467.9px; /* 원하는 구름 폭 */
-  height: 400px; /* 원하는 구름 높이 */
+  width: 1467.9px; 
+  height: 400px; 
   background-size: contain; /* 이미지 비율 유지 */
-  /* background-size: cover; */
   background-position: center;
   background-repeat: no-repeat;
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-  /* background-color: rgba(255, 0, 0, 0.2); */
 }
 
 /* 구름 이미지 지정 */
@@ -987,8 +953,6 @@ section.ov {
   height: 980px;
   background-color: #151515;
   color: #fff;
-  /* padding: 100px 0; */
-
   display: flex;              /* 플렉스 컨테이너로 설정 */
   align-items: center;        /* 수직 중앙 정렬 */
   justify-content: center;    /* 수평 중앙 정렬 */
@@ -1002,7 +966,6 @@ section.ov {
   height: auto;
   margin: 0 auto;
   box-sizing: border-box;
-  /* text-align: center; */
 }
 
 /* ===== Question Text ===== */
@@ -1141,17 +1104,14 @@ section.ov {
 
 .keyword-inner {
   width: 100vw;
-  /* max-width: 1200px; */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* gap: 2rem; */
   position: relative;
 }
 
 /* 텍스트 */
 .keyword-text {
-  /* font-size: clamp(2rem, 6vw, 5rem); */
   font-size: 200px;
   font-weight: 400;
   opacity: 0;
@@ -1266,19 +1226,18 @@ section.ov {
    min-height: 1545px;
   position: relative;
   background-position: center;
-  /* padding: 120px 0 0; */
   text-align: center;
   overflow: hidden;
   color: #222;
   font-family: "Pretendard", sans-serif;
     display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* 아래쪽 정렬 */
+  justify-content: flex-end; 
   padding-top: 27.54px; 
 }
 
 
-/* ===== 바깥 래퍼 (가짜 wrapper, 배경+라운드 적용) ===== */
+/* ===== 바깥 래퍼===== */
 .notification-wrapper {
   background-color: #151518; /* 라운드 뒤쪽에 보일 색상 */
 }
@@ -1299,15 +1258,6 @@ section.ov {
   z-index: 2;
 }
 
-/* ===== 실제 섹션 (콘텐츠 정렬용) ===== */
-/* .notification-sec {
-  background: transparent;
-  padding: 120px 0 0;
-  text-align: center;
-  color: #222;
-  font-family: "Pretendard", sans-serif;
-} */
-
 
 /* ===== 내부 컨테이너 ===== */
 .notification-sec .inner {
@@ -1326,7 +1276,6 @@ section.ov {
 /* ===== 텍스트 영역 ===== */
 .notification-sec .text-box {
   padding: 0;
-  /* margin-bottom: 60px; */
 }
 
 .notification-sec .label {
@@ -1438,7 +1387,6 @@ section.ov {
   position: absolute;
   left: 50%;
   top: 430px;
-  /* bottom: -300px; */
   transform: translateX(-50%);
   width: 100%;
   height: 900px;
@@ -1446,10 +1394,7 @@ section.ov {
   border-top-right-radius: 1000px;
   background: linear-gradient(180deg, #d9c4ff 0%, #e7d9ff 100%);
   z-index: 0;
-  /* mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%); */
-
-    /* === 밑으로 갈수록 점점 투명해짐 === */
+  /* === 밑으로 갈수록 점점 투명해짐 === */
   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
 }
@@ -1479,7 +1424,6 @@ section.ov {
 }
 
 .item-img {
-  /* max-width: 700px; */
   height: auto;
 }
 
@@ -1573,9 +1517,7 @@ section.ov {
 }
 
 .luck-title {
-  /* font-size: clamp(26px, 2.8vw, 34px); */
   font-size: 48px;
-  /* line-height: 1.4; */
   font-weight: 600;
   color: #222;
   margin-bottom: 16px;
@@ -1584,7 +1526,6 @@ section.ov {
 .luck-desc {
   font-size: 24px;
   color: #555;
-  /* line-height: 1.8; */
 }
 
 
@@ -1592,16 +1533,11 @@ section.ov {
 /* ===== DAILY 섹션 ===== */
 .luck-group-daily {
   display: flex;
-  /* width: 100vw; */
-   justify-content: flex-start;  
-  
+  justify-content: flex-start;  
   width: 100%;
   padding: 0;
   margin: 0;
-
-    position: relative;
-  /* left: 50%;
-  right: 50%; */
+  position: relative;
   margin-left: -50vw;
   margin-right: -50vw;
   margin-bottom: 140px; /* Daily와 Monthly 간 간격 */
@@ -1777,14 +1713,12 @@ section.ov {
 .ai-interaction .title {
   font-size: 48px;
   font-weight: 600;
-  /* line-height: 1.4; */
   color: #222;
   margin-bottom: 20px;
 }
 
 .ai-interaction .desc {
   font-size: 32px;
-  /* line-height: 1.7; */
   color: #5f5f5f;
 }
 
@@ -1824,7 +1758,7 @@ section.ov {
   pointer-events: none;
 }
 
-/* Funny → 메인 인터페이스 옆 */
+/* Funny */
 .ai-interaction .deco.funny {
   top: -20%;
   left: -150px;
@@ -1832,7 +1766,7 @@ section.ov {
   transform: rotate(-8deg);
 }
 
-/* Sweet → 오른쪽 아래 요괴 캐릭터 이미지 근처 */
+/* Sweet */
 .ai-interaction .deco.sweet {
   width: 330px;
   bottom: -100px;
@@ -1928,13 +1862,11 @@ section.ov {
 
 /* ===== Card Wrapper ===== */
 .amulet-section .amulet-card {
-  /* aspect-ratio: 3 / 5;  */
   aspect-ratio: auto;
   width: 283.6px;
   height: 435.53px;
   max-width: none; 
   height: auto;
-  /* border-radius: 12px; */
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -1979,9 +1911,6 @@ section.ov {
 
 
 
-/* =======================================================
-   ===== Unlucky Section (불운 지역 섹션 전체) =====
-======================================================= */
 /* ===== Unlucky Section ===== */
 .unlucky-section {
   background-image: url("img/Unlucky area 배경.png");
@@ -2010,8 +1939,8 @@ section.ov {
   width: 100%;
   box-sizing: border-box;
   position: absolute;         /* 부모(.unlucky-section) 기준 절대 위치 */
-  bottom: 0;                  /* 하단에 붙임 */
-  left: 50%;                  /* 수평 중앙 정렬 */
+  bottom: 0;                  
+  left: 50%;                  
   transform: translateX(-50%);/* 중앙 기준으로 위치 조정 */
 }
 
@@ -2030,12 +1959,10 @@ section.ov {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: visible; /* 이미지 크기에 맞게 부모도 확장 */
+  overflow: visible; 
 }
 
 .phone-img {
-  /* width: 100%;
-  height: 92%; */
   width: 656.05px;
   object-fit: contain;
   object-position: bottom center;
@@ -2052,9 +1979,7 @@ section.ov {
   color: #2a1b44;
 }
 
-/* =======================================================
-   ===== Text Block (네이밍 충돌 방지용) =====
-======================================================= */
+/* Text Block*/
 .unlucky-text {
   padding-left: 45px;
 }
@@ -2079,7 +2004,6 @@ section.ov {
 /* --- Description --- */
 .unlucky-desc {
   font-size: 24px;
-  /* line-height: 1.7; */
   color: #3a2c54;
   white-space: nowrap;
   overflow: visible;
@@ -2088,9 +2012,7 @@ section.ov {
   margin-bottom: 20px;
 }
 
-/* =======================================================
-   ===== Info Card =====
-======================================================= */
+/* Info Card  */
 .unlucky-card {
   display: flex;
   justify-content: center;
@@ -2100,7 +2022,6 @@ section.ov {
 .unlucky-img {
   width: 539.46px;
   height: 567.82px;
-  /* max-width: 500px; */
   height: auto;
   object-fit: cover;
   margin-bottom: 60px;
@@ -2156,7 +2077,7 @@ section.ov {
   z-index: 0;
 
   width: 100%;
-  height: 254px; /* 원하는 높이로 지정 */
+  height: 254px;
 }
 
 .bg-wrapper {
@@ -2180,9 +2101,8 @@ section.ov {
 
 /* 섹션 전체 */
 .bi-sec {
-  /* background: #151518; */
   color: var(--txt);
-  padding: 72px 0 96px; /* 상하 여백만 */
+  padding: 72px 0 96px;
 }
 
 /* 내부 컨테이너 */
@@ -2202,7 +2122,7 @@ section.ov {
 }
 
 
-/* 상단 헤더 (좌: 제목 / 우: 설명) */
+/* 상단 헤더 */
 .bi-head {
   display: grid;
   grid-template-columns: minmax(160px, 220px) 1fr;
@@ -2225,17 +2145,13 @@ margin: 0;
     padding: 46px 0 0;
     text-align: center;
     font-size: 64px;
-    /* line-height: 1.05; */
     font-weight: 600;
     color: #FFFFFF;
-
 }
 
 .bi-copy {
   margin: 0 auto 120px;
-  /* margin-bottom: 50px; */
   color: var(--txt-dim);
-  /* line-height: 1.7; */
   font-size: 32px;
   text-align: center;
 }
@@ -2245,7 +2161,6 @@ margin: 0;
   margin: 0;
   margin-bottom: 120px;
   color: var(--txt-dim);
-  /* line-height: 1.7; */
   text-align: center;
 }
 
@@ -2286,7 +2201,6 @@ margin: 0;
   object-fit: cover;
   object-position: center top;
   display: block;
-  /* filter: drop-shadow(0 10px 20px rgba(var(--card-glow), 0.28)); */
   transition: transform 0.6s ease;
 }
 
@@ -2348,7 +2262,7 @@ margin: 0;
   align-items: center;
 }
 
-/* 내부 레일 (Brand Identity와 동일 폭) */
+/* 내부 레일 */
 .logo-sec .rail {
   width: calc(661px + 40px + 660.14px); 
   margin: 0 auto;
@@ -2373,7 +2287,6 @@ margin: 0;
     padding: 46px 0 0;
     text-align: center;
     font-size: 48px;
-    /* line-height: 1.05; */
     font-weight: 600;
     color: #FFFFFF;
 }
@@ -2389,10 +2302,9 @@ margin: 0;
 .logo-head .logo-desc {
   color: #b5b5b5;
   margin: 0;
-  /* line-height: 1.7; */
 }
 
-/* === Logo Grid (픽셀 정렬 기반) === */
+/* === Logo Grid  === */
 .logo-grid {
   display: grid;
   grid-template-columns: 661px 660.14px; /* 왼쪽/오른쪽 카드 폭 */
@@ -2455,7 +2367,6 @@ margin: 0;
 
 /* ===== 전체 공통 ===== */
 .char-sec {
-  /* background: #f5f5f7; */
   padding: 72px 0 36px;
 }
 
@@ -2479,16 +2390,13 @@ margin: 0;
     padding: 46px 0 0;
     text-align: center;
     font-size: 48px;
-    /* line-height: 1.05; */
     font-weight: 600;
     color: #FFFFFF;
 }
 
 .char-copy {
   margin: 0 auto 120px;
-  /* margin-bottom: 50px; */
   color: var(--txt-dim);
-  /* line-height: 1.7; */
   font-size: 26px;
   text-align: center;
 }
@@ -2516,7 +2424,6 @@ margin: 0;
 
 /* 오른쪽 컬럼 */
 .char-col.right {
-  /* grid-template-rows: 504.19px 520px; */
   width: 660.14px;
 }
 
@@ -2571,22 +2478,20 @@ margin: 0;
 .char-text p {
   font-size: 27px;
   color: #E3DDFF;
-  /* line-height: 1.8; */
 }
 
 .char-text .highlight {
   color: #FFFFFF;
 }
 
-/* ===== 개별 이미지 설정 ===== */
 
+/* ===== 개별 이미지 설정 ===== */
 /* 메인 부루니 (좌상단) */
 
 .char-card.overlay{
   background-image: url("img/부루니캐릭터배경패턴.png");
   background-size: 101% auto;
   background-position: center 18%;
-  /* background: #5c4cc3; */
   width: 100%;     /* 카드 내부 비율 유지 */
   height: 500px;
   object-fit: contain;
@@ -2617,7 +2522,6 @@ margin: 0;
 .char-card.sub img {
   width: auto;
   height: 300px;   /* 두 이미지의 균형 높이 */
-  /* object-fit: contain; */
   padding-bottom: 65px;
 }
 
@@ -2626,7 +2530,7 @@ margin: 0;
 /* 하단 보라색 부루니 (우하단) */
 .char-card.image {
   background: #301A61;
-  width: 100%;     /* 카드 내부 비율 유지 */
+  width: 100%;    
   height: 635px;
   object-fit: contain;
   position: relative;
@@ -2691,7 +2595,6 @@ margin: 0;
   gap: 40px;
 }
 
-/* 텍스트 카드 */
 /* 도우니 텍스트 카드 */
 section.char-sec.douni .char-card.douni-text {
   display: flex;
@@ -2700,9 +2603,7 @@ section.char-sec.douni .char-card.douni-text {
   align-items: flex-start;      /* 왼쪽 정렬 */
   text-align: left;
   background-image: url("img/도우니캐릭터배경패턴.png");
-  /* background: #1b1b22; */
   background-size: 101% auto;
-  /* border-radius: 60px; */
   padding: 56px;
   width: 1250px;
   position: relative;
@@ -2723,7 +2624,6 @@ section.char-sec.douni .char-card.douni-text p {
   font-size: 27px;
   padding: 16px 100px 16px;
   color: #FFFFFF;
-  /* line-height: 1.8; */
   margin: 0;
 }
 
@@ -2822,18 +2722,15 @@ section.char-sec.douni .douni-main img {
 /* ===== App Preview Section ===== */
 .app-preview {
   background-color: #151519;
-  /* padding: 80px 0; */
   padding: 0 80px 257px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* ===== 영상 프레임과 동일한 스타일이지만, 이미지 비율 유지 ===== */
+/* ===== 이미지 비율 유지 ===== */
 .preview-frame {
-  /* width: min(860px, 90vw); */
   margin: 0 auto;
-  /* overflow: hidden; */
   display: grid;
   place-items: center;
 }
@@ -2841,32 +2738,11 @@ section.char-sec.douni .douni-main img {
 /* ===== 이미지 ===== */
 .preview-img {
   width: 1361px;
-  height: 921px; /* 높이 자동으로 조정 */
+  height: 921px; 
   object-fit: contain;
   display: block;
   border-radius: inherit;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
